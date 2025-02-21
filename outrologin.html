@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verified Artists Login - NewTalent Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-container h1 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #00ff88;
+        }
+
+        .login-container p {
+            color: #cccccc;
+            margin-bottom: 2rem;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #333333;
+            border-radius: 5px;
+            background: #0a0a0a;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .login-container input::placeholder {
+            color: #666666;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(45deg, #00ff88, #00cc6a);
+            color: #000000;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .login-container button:hover {
+            transform: translateY(-2px);
+        }
+
+        .login-container a {
+            color: #00ff88;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            margin-top: 1rem;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Verified Artists Login</h1>
+        <p>Access exclusive features for verified and established artists.</p>
+        <form>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="text" placeholder="Verification Code" required>
+            <button type="submit">Log In</button>
+        </form>
+        <a href="#forgot-password">Forgot your password?</a>
+        <a href="#request-verification">Request Verification</a>
+        <div class="footer">
+            Not a verified artist? <a href="#signup">Sign Up</a>
+        </div>
+    </div>
+</body>
+</html>
