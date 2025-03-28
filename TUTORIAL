@@ -1,0 +1,38 @@
+# Tutorial: Clonar um Repositório Git
+
+Siga os passos abaixo para clonar um repositório Git:
+
+1. **Certifique-se de ter o Git instalado**  
+    Verifique se o Git está instalado no seu sistema executando o comando:  
+    ```bash
+    git --version
+    ```
+    Caso não esteja instalado, faça o download e instale a partir do [site oficial do Git](https://git-scm.com/).
+
+2. **Obtenha a URL do repositório**  
+    Acesse o repositório que deseja clonar (por exemplo, no GitHub) e copie a URL HTTPS ou SSH.
+
+3. **Abra o terminal ou prompt de comando**  
+    Navegue até o diretório onde deseja clonar o repositório. Use o comando:  
+    ```bash
+    cd /caminho/do/diretorio
+    ```
+
+4. **Execute o comando de clonagem**  
+    Use o comando abaixo para clonar o repositório:  
+    ```bash
+    git clone <URL_DO_REPOSITORIO>
+    ```
+    Substitua `<URL_DO_REPOSITORIO>` pela URL copiada.
+
+5. **Verifique o conteúdo clonado**  
+    Após a clonagem, entre no diretório do repositório:  
+    ```bash
+    cd nome-do-repositorio
+    ```
+    Liste os arquivos para confirmar:  
+    ```bash
+    ls
+    ```
+
+Agora você clonou com sucesso o repositório Git para o seu computador!
