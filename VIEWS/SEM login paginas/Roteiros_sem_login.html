@@ -7,10 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="/VIEWS/MEDIA/FONTE/creato_display/CreatoDisplay-ExtraBoldItalic.otf" rel="stylesheet">
-
-  <!-- Fontes -->
-
-  <!-- Owl Carousel CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 
@@ -38,7 +34,7 @@ header {
 }
 
 .header-container {
-  background-image: url('/VIEWS/MEDIA/background.png');
+  background-image: url('/VIEWS/MEDIA/imagens/While\ Play.png');
   background-size: cover;
   background-position: center;
   padding: 40px 0;
@@ -129,7 +125,7 @@ a {
 }
 
 a:hover {
-  color: #007bff;
+  color: #ffffff;
 }
 
 h2 {
@@ -322,6 +318,83 @@ h3 {
     transform: translateY(calc(100% - 42px));
   }
 }
+.options {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  min-width: 600px;
+  max-width: 900px;
+  width: calc(100% - 100px);
+  height: 400px;
+  margin: 40px auto;
+}
+
+.option {
+  position: relative;
+  overflow: hidden;
+  min-width: 60px;
+  margin: 10px;
+  background: var(--optionBackground, var(--defaultBackground, #E6E9ED));
+  background-size: auto 120%;
+  background-position: center;
+  cursor: pointer;
+  transition: .5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.option.active {
+  flex-grow: 10000;
+  transform: scale(1);
+  max-width: 600px;
+  margin: 0px;
+  border-radius: 40px;
+  background-size: auto 100%;
+}
+
+.option .shadow {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 120px;
+  transition: .5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.option .label {
+  display: flex;
+  position: absolute;
+  bottom: 10px; /* Posiciona na parte inferior */
+  left: 10px; /* Posiciona na parte esquerda */
+  height: auto;
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.5s ease-in-out; /* Transição suave */
+}
+
+.option .label .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  color: white;
+  white-space: pre;
+}
+
+.option .label .info > div {
+  position: relative;
+  transition: .5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity .5s ease-out;
+}
+
+.option .label .info .main {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.option .label .info .sub {
+  transition-delay: .1s;
+}
+.option.active .label {
+  opacity: 1; /* Torna visível quando o slide está ativo */
+}
   </style>
 </head>
 <body>
@@ -333,14 +406,11 @@ h3 {
           <input type="text" id="searchInput" placeholder="Pesquisar">
           <span onclick="clearSearch()">❌</span>
         </div>
-        <a href="#">Publicar</a>
         <a href="#">Sobre Nós</a>
-        <a href="#">Biblioteca</a>
-        <a href="#">Perfil</a>
         <a href="#">Prêmios</a>
+        <a href="#">Homepage</a>
         <a href="#">Roteiro</a>
-        <a href="#">Comprar</a>
-        <a href="#">Suporte</a>
+        <a href="#">Personagens</a>
         <button class="login-button">Login</button>
       </div>
     </div>
@@ -398,40 +468,88 @@ h3 {
 <section class="game-section">
   <h2 class="line-title">Maiores avaliações</h2>
   <div class="owl-carousel custom-carousel owl-theme">
-    <div class="item active" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/dota-2.jpg);">
+    <div class="item active" style="background-image: url(https://th.bing.com/th/id/OIG1.Tf5N8CoZYEGBba0.mHpl?cb=iwc1&pid=ImgGn);">
       <div class="item-desc">
-        <h3>Dota 2</h3>
-        <p>Dota 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+        <h3>Phill e Jhonson</h3>
+        <p>Quando dois agentes aposentados, sofrem por uma volta de um vilão antigo da dupla, eles voltam a tona com mais uma missão de tirar o fôlego.</p>
       </div>
     </div>
-    <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/winter-3.jpg);">
+    <div class="item" style="background-image: url(https://th.bing.com/th/id/OIG1.puPuzKYXSqDMjmSqOWPm?cb=iwc1&pid=ImgGn);">
       <div class="item-desc">
-        <h3>The Witcher 3</h3>
-        <p>The Witcher 3 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+        <h3>Mãe padrasta</h3>
+        <p>Quando se vê individada e golpeada por seu marido, ela decide fazer de tudo para sustentar a filha de seu ex marido, em uma jornada emocionante e trágica.</p>
       </div>
     </div>
-    <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/rdr-2.jpg);">
+    <div class="item" style="background-image: url(https://th.bing.com/th/id/OIG2.HybcnpvnKJKU3JVfDbB4?cb=iwc1&w=1024&h=1024&rs=1&pid=ImgDetMain);">
       <div class="item-desc">
-        <h3>RDR 2</h3>
-        <p>RDR 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+        <h3>Cats, a descoberta</h3>
+        <p>Lili, é uma gata de uma dona meiga e simples, porém após a morte de sua dona, o gato é jogado para viver a rua, onde aprende a se virar e vivenciar a maldade humana.</p>
       </div>
     </div>
-    <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/pubg.jpg);">
+    <div class="item" style="background-image: url(https://th.bing.com/th/id/OIG2.n.KGhxVSXHyKnGYlonMb?cb=iwc1&w=1024&h=1024&rs=1&pid=ImgDetMain);">
       <div class="item-desc">
-        <h3>PUBG Mobile</h3>
-        <p>PUBG 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+        <h3>Free Throw</h3>
+        <p>Uma escola pobre consegue uma vaga na liga nacional pela desistência de uma antiga universidade, eles precisam ser campeões para se provarem que são dignos de continuarem na liga. </p>
       </div>
     </div>
-    <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/fortnite.jpg);">
+    <div class="item" style="background-image: url(https://th.bing.com/th/id/OIG3.0WDJJHLDqUB_CFSGzRZv?cb=iwc1&w=1024&h=1024&rs=1&pid=ImgDetMain);">
       <div class="item-desc">
-        <h3>Fortnite</h3>
-        <p>Battle royale where 100 players fight to be the last person standing. which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+        <h3>Phillipe</h3>
+        <p>Em um mundo diatópico, onde os animais são estrelas, ele enfrenta dificuldades na vida da fama e em ser um animal de estimação. Ele se vê em uma jornada de autodescoberta e aceitação.</p>
       </div>
     </div>
-    <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/far-cry-5.jpg);">
+    <div class="item" style="background-image: url(https://th.bing.com/th/id/OIG3.hF7pTMuG8iO4HM679ps3?cb=iwc1&pid=ImgGn);">
       <div class="item-desc">
-        <h3>Far Cry 5</h3>
-        <p>Far Cry 5 is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+        <h3>The door</h3>
+        <p>A porta sempre se tantém fechada, porém de noite após Maik e seu grupo de amigos invadir a escola em busca da prova do professor para colarem no dia do teste final, eles entram em uma jornada em uma escola distópica que se muda a cada dia.</p>
+      </div>
+    </div>
+  </div>
+  <h2 class="line-title">Roteiristas Do Mês</h2>
+  <div class="options">
+    <div class="option active" style="--optionBackground:url(https://i.pinimg.com/736x/99/27/90/99279086833d4d0662c19f294035630b.jpg);">
+      <div class="shadow"></div>
+      <div class="label">
+        <div class="info">
+          <div class="main">9.7🌟</div>
+          <div class="sub">Ericksen A.</div>
+        </div>
+      </div>
+    </div>
+    <div class="option" style="--optionBackground:url(https://img.freepik.com/fotos-gratis/desenhista-concentrado-da-jovem-mulher_171337-15791.jpg);">
+      <div class="shadow"></div>
+      <div class="label">
+        <div class="info">
+          <div class="main">9.6🌟</div>
+          <div class="sub">Isabelle Malash</div>
+        </div>
+      </div>
+    </div>
+    <div class="option" style="--optionBackground:url(https://i.pinimg.com/736x/98/8f/9f/988f9f55f8887c8f0bf4b1b76a6203c4.jpg);">
+      <div class="shadow"></div>
+      <div class="label">
+        <div class="info">
+          <div class="main">9.1🌟</div>
+          <div class="sub">Stella Alves</div>
+        </div>
+      </div>
+    </div>
+    <div class="option" style="--optionBackground:url(https://i.pinimg.com/736x/ba/1c/c3/ba1cc3c72027f0c7b5c1095983edcc53.jpg);">
+      <div class="shadow"></div>
+      <div class="label">
+        <div class="info">
+          <div class="main">8.9🌟</div>
+          <div class="sub">Cornelius Coconut</div>
+        </div>
+      </div>
+    </div>
+    <div class="option" style="--optionBackground:url(https://i.pinimg.com/736x/9b/75/5a/9b755acd3ac5aa2d24f24b652a421faf.jpg);">
+      <div class="shadow"></div>
+      <div class="label">
+        <div class="info">
+          <div class="main">8.6🌟</div>
+          <div class="sub">XX Morgan</div>
+        </div>
       </div>
     </div>
   </div>
@@ -450,6 +568,10 @@ h3 {
       $(this).toggleClass("active");
     });
   });
+  $(".option").click(function () {
+  $(".option").removeClass("active");
+  $(this).addClass("active");
+});
 </script>
 
 </body>
