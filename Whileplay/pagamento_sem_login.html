@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
+
     <style>
         @import url('https://fonts.googleapis.com/css?family=PT+Mono|Quicksand:400,700&display=swap');
+        
 
         :root {
             --coral: #EF533D;
@@ -13,16 +16,42 @@
             --leather: #AB987A;
             --eggshell: #F5F5F5;
         }
+            body {
+        animation: is-bouncing 1s cubic-bezier(0.68, -0.6, 0.32, 1.6) alternate infinite;
+        display: grid;
+        place-items: center;
+        height: 100px;
+        margin: 0;
+    }
+    .box img {
+        width: 50px; /* Reduz o tamanho da seta */
+        transform: scaleX(-1); /* Inverte a seta horizontalmente */
+        position: absolute;
+        top: 10px; /* Posiciona no canto superior */
+        left: 10px; /* Posiciona no canto esquerdo */
+    }
+    @keyframes is-bouncing {
+        to {
+            transform: translate(30px);
+        }
+    }
+           body {
+      margin: 0;
+      font-family: 'Adamina', serif;
+      margin-top: 120px; /* Adiciona espaço para o conteúdo abaixo do header */
+    }
 
+        
         body, html {
-            background: url(/VIEWS/MEDIA/imagens/While\ Play.png) no-repeat left center fixed;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100%;
-            background: var(--eggshell);
             font-family: 'Quicksand', sans-serif;
+            /* Aplicação do fundo */
+            background: url('/Whileplay/VIEWS/MEDIA/imagens/backgroundclean.png') no-repeat center center fixed;
+            background-size: cover;
         }
 
         .Checkout {
@@ -230,6 +259,9 @@
     </style>
 </head>
 <body>
+        <div class="box">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAaVBMVEX///8eIB0AAAAABQAABwCfn56jpKIbHRoZGxjR0dG9vr3Nzc3S0tIRFA/CwsIcHxt1dnUTFRGwsK+pqqm2t7bf39+XmJfq6upQUU8iJCAqLCkKDgdFRkQ3OTby8/Ly8vFcXVtpaWg6Ozkgv1bJAAADLElEQVR4nO2d0XKbMBREhaCGmITYEOPYOE6T///IOqmnhXL1VobR0Z5nP2hHe3VXIGTnhBBCCCGEEEIIIYQQQgghhBBCrMOh6/v2uPYolqN+9X4ovN9RNW78PvtmOD2uPZZFaH2Z3an8w9qjWYBj/kdglpVEiX2ejaie6rUH9N85l9lEYoGrRZ9NKT1M4vVfhVlZwIw6U3irRdZyc6nmElkrajefRFjTuJ7nk5iVqKbx4Mu5xGogzWJjSWQ1ja0tkWRUUyIrwNkSc5JRk63FgW9UVIALrKgkiYFaJEm0ZzGBpjGQVtRkm0bONyq/aVQooyZbiwpwcZGAUVMNcNWeX4sKcHFhNw3Ua5tALfKXG5RRU20a2vVHRrJNg1+LKTQN1LmbZGtRu/64UIAjEAhweIkKcJEReG3DN2oCAQ5l1GRrEXWSMRDgSLOYgFFTDXApNA0FuLhItmkkUIsooyZQi031bEic7Prfm/ZHxHQ/je+JxgHu+OG9L2LGEjgyauMH8wfxcw9wtVWnEKrqcFP4Zk8xg/3FuRfju0YQfus+9msPYlH2O/dmtBIQ5Zs7rT2GZXk+uU/uSvrFbQ53T2sPYlFudbjFr6XuQl5Mv/qhexy4Lf93pnF1wc2l9WhvkcdMaG/xd4d4bdpNxAT2h6DHUY0lkHTKZuuthxigh/umQNLNNi/0iybwnyrgj9XaFgW9ezIFkk7w4y/ssWcQX4OgM4r2DKKiWpIWxQsEtYnAKooXSLcoaEePj2ppWhQvkNQmWnpUw1vUnMEK9CGJLRBUg4pqsWNbFBTV1CZix7YoXiCoTdg1CHr5YgvEW7SACyTt6AMWxQuEW5QU1Tp6VGvp52Q6+jkZ06KkqGbOIOlOdnybsGsQ1Sbm+mBRzRJItyheIOmcjF2DoKhmC0RZ1BBIevliCwS1iYBF8QI5FjXvtyBFtevJ+i9ZUJtwG/z/AX/Op5Al0PxfbpBFnXtP77/VYRa9cZ72CtLLlzt9Dq7Bb455ObYoT+Dk+Rrpwe+Yjb/ffjCcOF+fTalfvR8K73fHtUeyHIeu71uwPiGEEEIIIYQQQgghhBBCCCGEWJJfMX9FR2FQhKYAAAAASUVORK5CYII=" alt="">
+    </div>
     <div class="Checkout">
         <div class="Card">
             <div class="front">
@@ -245,7 +277,7 @@
                 </div>
                 <div class="card-date">
                     <label>Expires</label>
-                    <div class="mono">01/2023</div>
+                    <div class="mono">01/2025</div>
                 </div>
             </div>
             <div class="back">
@@ -304,7 +336,6 @@
                             <option value="2038">2038</option>
                             <option value="2039">2039</option>
                             <option value="2040">2040</option>
-                            
                         </select>
                     </div>
                     <div class="Input">
@@ -362,7 +393,7 @@
                 this.value = value.toUpperCase(); // Converte para maiúsculas
                 
                 const cardHolder = document.querySelector(".card-holder .mono");
-                cardHolder.textContent = value || "John Doe";
+                cardHolder.textContent = value || "Nome completo";
             });
 
             // Atualizar a data de expiração
@@ -390,7 +421,8 @@
 
             // Definir valores iniciais no cartão
             updateExpireDate();
-        })
+        });
+
     </script>
 </body>
 </html>
