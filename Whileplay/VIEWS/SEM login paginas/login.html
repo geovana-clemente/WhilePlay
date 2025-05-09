@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recuperar Senha - NewTalent Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - NewTalent Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,7 +14,7 @@
     }
 
     body {
-      background: url(/VIEWS/MEDIA/imagens/While\ Play.png) no-repeat left center fixed;
+      background: url(/Whileplay/VIEWS/MEDIA/imagens/While\ Play.png) no-repeat left center fixed;
       background-size: cover;
       color: #ffffff;
       height: 100vh;
@@ -25,7 +25,7 @@
       cursor: pointer;
     }
 
-    .recovery-container {
+    .login-container {
       background: #707070;
       padding: 2rem;
       border-radius: 50px;
@@ -36,18 +36,18 @@
       cursor: auto;
     }
 
-    .recovery-container h1 {
-      font-size: 2.5rem;
+    .login-container h1 {
+      font-size: 3rem;
       margin-bottom: 1rem;
       color: #000000;
     }
 
-    .recovery-container p {
+    .login-container p {
       color: #000000;
       margin-bottom: 2rem;
     }
 
-    .recovery-container input {
+    .login-container input {
       width: 100%;
       padding: 0.8rem;
       margin-bottom: 1rem;
@@ -58,11 +58,11 @@
       font-size: 1rem;
     }
 
-    .recovery-container input::placeholder {
+    .login-container input::placeholder {
       color: #666666;
     }
 
-    .recovery-container button {
+    .login-container button {
       width: 100%;
       padding: 0.8rem;
       background: linear-gradient(45deg, #060662, #062b50);
@@ -75,11 +75,11 @@
       transition: transform 0.3s;
     }
 
-    .recovery-container button:hover {
+    .login-container button:hover {
       transform: translateY(-2px);
     }
 
-    .recovery-container a {
+    .login-container a {
       color: #ffffff;
       text-decoration: none;
       font-size: 0.9rem;
@@ -87,7 +87,7 @@
       margin-top: 1rem;
     }
 
-    .recovery-container a:hover {
+    .login-container a:hover {
       text-decoration: underline;
     }
 
@@ -108,23 +108,22 @@
   </style>
 </head>
 <body onclick="handleBackgroundClick(event)">
-  <div class="recovery-container">
-    <h1>Recuperar Senha</h1>
-    <p>Preencha os dados abaixo para redefinir sua senha.</p>
+  <div class="login-container">
+    <h1>Login</h1>
+    <p>Bem vindo de volta criativo!</p>
     <form>
       <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Nova senha" required>
-      <input type="password" placeholder="Repetir nova senha" required>
-      <button type="submit">Redefinir Senha</button>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Logar</button>
     </form>
-    <div class="footer">
-      <a href="#signup">Não tem conta? Cadastre-se</a>
+    <a href="#forgot-password">Esqueceu sua senha?</a>
+    <div class="footer"><a href="#signup">Não tem login? Faça cadastro</a>
     </div>
   </div>
 
   <script>
     function handleBackgroundClick(event) {
-      const container = document.querySelector('.recovery-container');
+      const container = document.querySelector('.login-container');
       if (!container.contains(event.target)) {
         const confirmRedirect = confirm("Deseja voltar para a homepage?");
         if (confirmRedirect) {
