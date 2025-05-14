@@ -9,39 +9,51 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=PT+Mono|Quicksand:400,700&display=swap');
         
-
         :root {
             --coral: #EF533D;
             --navy: #0F1626;
             --leather: #AB987A;
             --eggshell: #F5F5F5;
         }
-            body {
-        animation: is-bouncing 1s cubic-bezier(0.68, -0.6, 0.32, 1.6) alternate infinite;
-        display: grid;
-        place-items: center;
-        height: 100px;
-        margin: 0;
-    }
-    .box img {
-        width: 50px; /* Reduz o tamanho da seta */
-        transform: scaleX(-1); /* Inverte a seta horizontalmente */
-        position: absolute;
-        top: 10px; /* Posiciona no canto superior */
-        left: 10px; /* Posiciona no canto esquerdo */
-    }
-    @keyframes is-bouncing {
-        to {
-            transform: translate(30px);
-        }
-    }
-           body {
-      margin: 0;
-      font-family: 'Adamina', serif;
-      margin-top: 120px; /* Adiciona espaço para o conteúdo abaixo do header */
-    }
-
         
+        /* Removida a animação de bouncing do body */
+        
+        /* Estilo para o botão de voltar */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: var(--coral);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-button:hover {
+            background-color: var(--navy);
+            transform: scale(1.1);
+        }
+        
+        .back-button::before {
+            content: "←";
+            font-size: 24px;
+            font-weight: bold;
+        }
+           
+        body {
+            margin: 0;
+            font-family: 'Adamina', serif;
+        }
+
         body, html {
             margin: 0;
             display: flex;
@@ -259,9 +271,9 @@
     </style>
 </head>
 <body>
-        <div class="box">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAaVBMVEX///8eIB0AAAAABQAABwCfn56jpKIbHRoZGxjR0dG9vr3Nzc3S0tIRFA/CwsIcHxt1dnUTFRGwsK+pqqm2t7bf39+XmJfq6upQUU8iJCAqLCkKDgdFRkQ3OTby8/Ly8vFcXVtpaWg6Ozkgv1bJAAADLElEQVR4nO2d0XKbMBREhaCGmITYEOPYOE6T///IOqmnhXL1VobR0Z5nP2hHe3VXIGTnhBBCCCGEEEIIIYQQQgghhBBCrMOh6/v2uPYolqN+9X4ovN9RNW78PvtmOD2uPZZFaH2Z3an8w9qjWYBj/kdglpVEiX2ejaie6rUH9N85l9lEYoGrRZ9NKT1M4vVfhVlZwIw6U3irRdZyc6nmElkrajefRFjTuJ7nk5iVqKbx4Mu5xGogzWJjSWQ1ja0tkWRUUyIrwNkSc5JRk63FgW9UVIALrKgkiYFaJEm0ZzGBpjGQVtRkm0bONyq/aVQooyZbiwpwcZGAUVMNcNWeX4sKcHFhNw3Ua5tALfKXG5RRU20a2vVHRrJNg1+LKTQN1LmbZGtRu/64UIAjEAhweIkKcJEReG3DN2oCAQ5l1GRrEXWSMRDgSLOYgFFTDXApNA0FuLhItmkkUIsooyZQi031bEic7Prfm/ZHxHQ/je+JxgHu+OG9L2LGEjgyauMH8wfxcw9wtVWnEKrqcFP4Zk8xg/3FuRfju0YQfus+9msPYlH2O/dmtBIQ5Zs7rT2GZXk+uU/uSvrFbQ53T2sPYlFudbjFr6XuQl5Mv/qhexy4Lf93pnF1wc2l9WhvkcdMaG/xd4d4bdpNxAT2h6DHUY0lkHTKZuuthxigh/umQNLNNi/0iybwnyrgj9XaFgW9ezIFkk7w4y/ssWcQX4OgM4r2DKKiWpIWxQsEtYnAKooXSLcoaEePj2ppWhQvkNQmWnpUw1vUnMEK9CGJLRBUg4pqsWNbFBTV1CZix7YoXiCoTdg1CHr5YgvEW7SACyTt6AMWxQuEW5QU1Tp6VGvp52Q6+jkZ06KkqGbOIOlOdnybsGsQ1Sbm+mBRzRJItyheIOmcjF2DoKhmC0RZ1BBIevliCwS1iYBF8QI5FjXvtyBFtevJ+i9ZUJtwG/z/AX/Op5Al0PxfbpBFnXtP77/VYRa9cZ72CtLLlzt9Dq7Bb455ObYoT+Dk+Rrpwe+Yjb/ffjCcOF+fTalfvR8K73fHtUeyHIeu71uwPiGEEEIIIYQQQgghhBBCCCGEWJJfMX9FR2FQhKYAAAAASUVORK5CYII=" alt="">
-    </div>
+    <!-- Botão de voltar que substituiu a seta -->
+    <button class="back-button" title="Voltar à página anterior"></button>
+    
     <div class="Checkout">
         <div class="Card">
             <div class="front">
@@ -349,6 +361,12 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Configuração do botão de voltar
+            const backButton = document.querySelector(".back-button");
+            backButton.addEventListener("click", function() {
+                window.history.back(); // Volta para a página anterior no histórico do navegador
+            });
+            
             // Virar o cartão ao clicar
             const card = document.querySelector(".Card");
             card.addEventListener("click", function() {
@@ -422,7 +440,6 @@
             // Definir valores iniciais no cartão
             updateExpireDate();
         });
-
     </script>
 </body>
 </html>
