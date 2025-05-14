@@ -1,81 +1,445 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Botão com Efeito de Seta</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f5f5f5;
-      font-family: Arial, sans-serif;
-    }
-    
-    .btn-arrow {
-      position: relative;
-      width: 200px;
-      height: 56px;
-      background-color: white;
-      border: 4px solid white;
-      border-radius: 16px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-arrow p {
-      position: relative;
-      margin: 0;
-      line-height: 48px;
-      text-align: center;
-      color: black;
-      font-weight: 600;
-      font-size: 20px;
-      z-index: 20;
-      transition: transform 0.3s ease;
-    }
-    
-    .arrow-icon {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 48px;
-      background-color: #4ade80; /* Verde */
-      border-radius: 12px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: width 0.5s ease;
-    }
-    
-    .arrow-icon svg {
-      width: 25px;
-      height: 25px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
 
-    .btn-arrow:hover .arrow-icon {
-      width: 100%;
-    }
-    
-    .btn-arrow:hover p {
-      transform: translateX(10px);
-    }
-  </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=PT+Mono|Quicksand:400,700&display=swap');
+        
+        :root {
+            --coral: #333333;       /* Alterado para cinza escuro */
+            --navy: #121212;        /* Alterado para preto profundo */
+            --leather: #505050;     /* Alterado para cinza médio */
+            --eggshell: #1E1E1E;    /* Alterado para escuro */
+        }
+        
+        /* Estilo para o botão de cancelar compra - Sem seta */
+        .btn-cancel {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 200px;
+            height: 56px;
+            background-color: #c43030;  /* Vermelho escuro */
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+            color: white;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .btn-cancel:hover {
+            background-color: #a52828;  /* Vermelho mais escuro no hover */
+        }
+           
+        body {
+            margin: 0;
+            font-family: 'Adamina', serif;
+        }
+
+        body, html {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-family: 'Quicksand', sans-serif;
+            /* Aplicação do fundo escuro */
+            background: #121212;    /* Fundo escuro sólido */
+            color: white;          /* Texto em branco para melhor contraste */
+        }
+
+        .Checkout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .Card {
+            width: 25.68rem;
+            height: 16.194rem;
+            border-radius: 0.9rem;
+            background: linear-gradient(110deg, var(--coral) 60%, var(--navy) 60%);
+            font-size: 0.7em;
+            text-transform: uppercase;
+            color: white;
+            position: relative;
+            box-shadow: 
+                2px 2px 8px 0 rgba(0, 0, 0, 0.3),
+                0 0 64px 0 rgba(0, 0, 0, 0.4);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            transition: transform 0.4s ease-in-out;
+            transform: translate(0, 4rem);
+        }
+
+        .Card .card-chip {
+            width: 4.5em;
+            height: 3em;
+            position: absolute;
+            top: 2.5rem;
+            left: 2rem;
+            border-radius: 0.3em;
+            background: linear-gradient(135deg, #fefcea, gold 120%);
+        }
+
+        .Card .card-logo {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            font-size: 2em;
+            font-weight: 700;
+            line-height: 0.9em;
+            text-align: right;
+        }
+
+        .Card .card-number {
+            position: absolute;
+            top: 6.5rem;
+            left: 1rem;
+        }
+
+        .Card .card-number div {
+            font-size: 2.9em;
+        }
+
+        .Card .card-holder {
+            position: absolute;
+            top: 10rem;
+            left: 1rem;
+        }
+
+        .Card .card-date {
+            position: absolute;
+            top: 12.8rem;
+            left: 1rem;
+        }
+
+        .Card .card-strip {
+            background: black;
+            width: 100%;
+            height: 5em;
+            position: absolute;
+            top: 4em;
+        }
+
+        .Card .card-logo-back {
+            position: absolute;
+            top: 12rem;
+            right: 1.5rem;
+            font-size: 2em;
+            font-weight: 700;
+            line-height: 0.9em;
+            text-align: right;
+        }
+
+        .Card .card-code {
+            position: absolute;
+            top: 12rem;
+            left: 1rem;
+        }
+
+        .Card .mono {
+            font-family: 'PT Mono', monospace;
+            font-size: 2em;
+        }
+
+        .Card .front, .Card .back {
+            transition: opacity 0s linear 0.2s, transform 0s linear 0.2s;
+        }
+
+        .Card .back {
+            opacity: 0;
+        }
+
+        .Card.flipped {
+            transform: translate(0, 4rem) scale(-1, 1);
+        }
+
+        .Card.flipped .front {
+            opacity: 0;
+        }
+
+        .Card.flipped .back {
+            opacity: 1;
+            transform: scale(-1, 1);
+        }
+
+        .Form {
+            background: #222222;    /* Alterado para cinza muito escuro */
+            box-shadow: 
+                2px 2px 8px 0 rgba(0, 0, 0, 0.3),
+                0 0 64px 0 rgba(0, 0, 0, 0.4);
+            padding: 4rem 2rem 2rem 2rem;
+            width: 28rem;
+            border-radius: 1rem;
+            color: white;          /* Texto em branco para melhor contraste */
+        }
+
+        .Form .Input {
+            margin-top: 1rem;
+        }
+
+        .Form .Input label {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .Form .Input input {
+            outline: none;
+        }
+
+        .Form .Input input[type="text"], 
+        .Form .Input input[type="number"] {
+            font-family: inherit;
+            font-size: 1.2em;
+            padding: 0.3em;
+            border: #444 1px solid;    /* Borda mais escura */
+            border-radius: 3px;
+            width: 28rem;
+            background-color: #333333;  /* Fundo escuro para inputs */
+            color: white;               /* Texto em branco */
+        }
+
+        .Form .Input input::-webkit-inner-spin-button, 
+        .Form .Input input::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+
+        .Form .Input select {
+            -webkit-appearance: none; 
+            appearance: none;
+            padding: 0;
+            border: none;
+            outline: none!important;
+            top: 6px;
+            left: 6px;
+            background: #333333;     /* Fundo escuro para select */
+            color: white;            /* Texto em branco */
+            font-family: inherit;
+            font-size: 1.2em;
+            padding: 0.3em;
+            border: #444 1px solid;  /* Borda mais escura */
+            border-radius: 3px;
+            min-width: 5em;
+            margin-right: 1em;
+        }
+
+        .Form .row {
+            display: flex;
+            width: 100%;
+        }
+
+        .Form .row input {
+            width: 1.9em !important;
+            align-self: flex-end;
+        }
+
+        .Form button {
+            width: 100%;
+            background: #c43030;    /* Alterado para vermelho escuro */
+            border: 0;
+            color: white;
+            font-family: inherit;
+            font-weight: 700;
+            margin: 1.5rem 0 0 0;
+            padding: 1rem 0;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            cursor: pointer;
+            transition: background 0.2s ease-in-out;
+            
+        }
+
+        .Form button:hover {
+            background: var(--navy);
+        }
+
+        /* Placeholder text */
+        ::placeholder {
+            color: #888;    /* Cor de placeholder mais visível no fundo escuro */
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-  <button type="button" class="btn-arrow">
-    <div class="arrow-icon">
-      <svg width="25px" height="25px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#000000" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path>
-        <path fill="#000000" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path>
-      </svg>
+    <!-- Botão de cancelar compra - Sem seta -->
+    <button type="button" class="btn-cancel">Cancelar compra</button>
+    
+    <div class="Checkout">
+        <div class="Card">
+            <div class="front">
+                <div class="card-chip"></div>
+                <div class="card-logo">Seu<br>Cartão</div>
+                <div class="card-number">
+                    <label>Card Number</label>
+                    <div class="mono">0000 0000 0000 0000</div>
+                </div>
+                <div class="card-holder">
+                    <label>Card Holder</label>
+                    <div class="mono">Nome completo</div>
+                </div>
+                <div class="card-date">
+                    <label>Expires</label>
+                    <div class="mono">01/2025</div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="card-strip"></div>
+                <div class="card-logo-back">Seu<br>Cartão</div>
+                <div class="card-code">
+                    <label>CCV</label>
+                    <div class="mono">123</div>
+                </div>
+            </div>
+        </div>
+        <div class="Form">
+            <form onsubmit="return false">
+                <div class="Input">
+                    <label>Card Number</label>
+                    <input id="number" type="text" maxlength="19" placeholder="0000 0000 0000 0000">
+                </div>
+                <div class="Input">
+                    <label>Card Holder</label>
+                    <input id="holder" type="text" maxlength="29" placeholder="Nome completo do titular">
+                </div>
+                <div class="row">
+                    <div class="Input">
+                        <label>Month</label>
+                        <select id="month">
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                    <div class="Input">
+                        <label>Year</label>
+                        <select id="year">
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                            <option value="2031">2031</option>
+                            <option value="2032">2032</option>
+                            <option value="2033">2033</option>
+                            <option value="2034">2034</option>
+                            <option value="2035">2035</option>
+                            <option value="2036">2036</option>
+                            <option value="2037">2037</option>
+                            <option value="2038">2038</option>
+                            <option value="2039">2039</option>
+                            <option value="2040">2040</option>
+                        </select>
+                    </div>
+                    <div class="Input">
+                        <label>CCV</label>
+                        <input id="ccv" type="text" maxlength="3" placeholder="123">
+                    </div>
+                </div>
+                <button>Checkout</button>
+            </form>
+        </div>
     </div>
-    <p>Go Back</p>
-  </button>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Configuração do botão de cancelar compra
+            const backButton = document.querySelector(".btn-cancel");
+            backButton.addEventListener("click", function() {
+                window.history.back(); // Volta para a página anterior no histórico do navegador
+            });
+            
+            // Virar o cartão ao clicar
+            const card = document.querySelector(".Card");
+            card.addEventListener("click", function() {
+                card.classList.toggle("flipped");
+            });
+            
+            // Focar no CCV vira o cartão automaticamente
+            const ccvInput = document.getElementById('ccv');
+            ccvInput.addEventListener('focus', function() {
+                card.classList.add("flipped");
+            });
+            
+            ccvInput.addEventListener('blur', function() {
+                card.classList.remove("flipped");
+            });
+
+            // Atualizar o número do cartão com formatação (espaço a cada 4 dígitos)
+            const numberInput = document.getElementById('number');
+            numberInput.addEventListener('input', function() {
+                let value = this.value.replace(/\D/g, "").substring(0, 16); // Remove não-dígitos e limita a 16 caracteres
+                let formattedValue = '';
+                
+                // Adiciona espaço a cada 4 dígitos
+                for(let i = 0; i < value.length; i++) {
+                    if(i > 0 && i % 4 === 0) {
+                        formattedValue += ' ';
+                    }
+                    formattedValue += value[i];
+                }
+                
+                this.value = formattedValue; // Atualiza o campo com a formatação
+                
+                // Atualiza o visual do cartão
+                const cardNumber = document.querySelector(".card-number .mono");
+                cardNumber.textContent = formattedValue || "0000 0000 0000 0000";
+            });
+
+            // Atualizar o nome do titular
+            const holderInput = document.getElementById('holder');
+            holderInput.addEventListener('input', function() {
+                let value = this.value.replace(/[^a-zA-Z\s]/g, ""); // Permite apenas letras e espaços
+                this.value = value.toUpperCase(); // Converte para maiúsculas
+                
+                const cardHolder = document.querySelector(".card-holder .mono");
+                cardHolder.textContent = value || "Nome completo";
+            });
+
+            // Atualizar a data de expiração
+            const monthSelect = document.getElementById('month');
+            const yearSelect = document.getElementById('year');
+            
+            function updateExpireDate() {
+                const month = monthSelect.value;
+                const year = yearSelect.value;
+                const cardDate = document.querySelector(".card-date .mono");
+                cardDate.textContent = `${month}/${year}`;
+            }
+            
+            monthSelect.addEventListener('change', updateExpireDate);
+            yearSelect.addEventListener('change', updateExpireDate);
+
+            // Atualizar o CCV
+            ccvInput.addEventListener('input', function() {
+                let value = this.value.replace(/\D/g, "").substring(0, 3); // Apenas números, máximo 3
+                this.value = value;
+                
+                const cardCode = document.querySelector(".card-code .mono");
+                cardCode.textContent = value || "123";
+            });
+
+            // Definir valores iniciais no cartão
+            updateExpireDate();
+        });
+    </script>
 </body>
 </html>
