@@ -462,6 +462,25 @@ h3 {
       </div>
     </div>
   </div>
+  <!-- Modal para ampliar personagem -->
+  <div id="modal-roteiro" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;">
+    <div id="modal-roteiro-content" style="background:#222;border-radius:20px;box-shadow:0 8px 32px #000a;padding:32px 24px;display:flex;flex-direction:column;align-items:center;max-width:90vw;max-height:90vh;">
+      <div id="modal-roteiro-img" style="width:350px;height:220px;background-size:cover;background-position:center;border-radius:16px;box-shadow:0 4px 24px #0008;margin-bottom:24px;"></div>
+      <div id="modal-roteiro-text" style="color:#fff;text-align:center;font-size:18px;margin-bottom:24px;"></div>
+      <div id="star-rating" style="display:flex;gap:6px;justify-content:center;margin-bottom:24px;cursor:pointer;">
+        <svg class="star" data-value="1" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" data-value="2" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" data-value="3" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" data-value="4" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" data-value="5" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div style="display:flex;gap:16px;">
+        <button id="baixar-roteiro-btn" style="background:#fff;color:#222;font-weight:bold;padding:10px 28px;border:none;border-radius:8px;cursor:pointer;font-size:18px;">Baixar Personagem</button>
+        <button id="comprar-btn" style="background:#fe4141;color:#fff;font-weight:bold;padding:10px 28px;border:none;border-radius:8px;cursor:pointer;font-size:18px;">Comprar</button>
+      </div>
+      <button id="fechar-modal-roteiro" style="background:#444;color:#fff;font-weight:bold;padding:8px 22px;border:none;border-radius:8px;cursor:pointer;font-size:16px;margin-top:18px;">Fechar</button>
+    </div>
+  </div>
 </section>
 
 
@@ -571,6 +590,58 @@ h3 {
   $(".option").click(function () {
   $(".option").removeClass("active");
   $(this).addClass("active");
+});
+// Modal de ampliação dos cards de personagem
+$(document).ready(function(){
+  $('.custom-carousel .item').on('click', function(){
+    var bg = $(this).css('background-image');
+    $('#modal-roteiro-img').css('background-image', bg);
+    var titulo = $(this).find('h3').text();
+    var texto = $(this).find('p').text();
+    $('#modal-roteiro-text').html('<strong>' + titulo + '</strong><br>' + texto);
+    // Resetar estrelas
+    $('#star-rating .star').each(function(){
+      $(this).attr('fill', 'none');
+    });
+    let rating = 0;
+    // Hover nas estrelas
+    $('#star-rating .star').off('mouseenter').on('mouseenter', function(){
+      var val = parseInt($(this).data('value'));
+      $('#star-rating .star').each(function(i){
+        $(this).attr('fill', i < val ? '#FFD700' : 'none');
+      });
+    });
+    // Sair do hover
+    $('#star-rating').off('mouseleave').on('mouseleave', function(){
+      $('#star-rating .star').each(function(i){
+        $(this).attr('fill', i < rating ? '#FFD700' : 'none');
+      });
+    });
+    // Clicar para avaliar
+    $('#star-rating .star').off('click').on('click', function(){
+      rating = parseInt($(this).data('value'));
+      $('#star-rating .star').each(function(i){
+        $(this).attr('fill', i < rating ? '#FFD700' : 'none');
+      });
+      // Aqui você pode adicionar lógica para salvar a avaliação
+    });
+    // Botão baixar: não faz nada
+    $('#baixar-roteiro-btn').off('click').on('click', function(){
+      // Nenhuma ação
+    });
+    // Botão comprar: redireciona para pagamento.html
+    $('#comprar-btn').off('click').on('click', function(){
+      window.location.href = '/Whileplay/VIEWS/pagamento/pagamento.html';
+    });
+    $('#modal-roteiro').css('display','flex');
+  });
+  $('#fechar-modal-roteiro').on('click', function(){
+    $('#modal-roteiro').hide();
+  });
+  // Fechar modal ao clicar fora do conteúdo
+  $('#modal-roteiro').on('click', function(e){
+    if(e.target === this) $(this).hide();
+  });
 });
 </script>
 
