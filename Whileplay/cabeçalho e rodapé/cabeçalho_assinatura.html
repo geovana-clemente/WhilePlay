@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Header Largo e no Topo</title>
+  <title>Header para Usuário Assinante</title>
 
   <!-- Fonte Adamina -->
   <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
@@ -76,6 +76,28 @@
       margin-left: 8px;
     }
 
+    .user-profile-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .subscription-badge {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #FFD700; /* Cor dourada para indicar premium */
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .subscription-badge .material-icons {
+      font-size: 16px;
+    }
+
     .profile-icon {
       background-color: white;
       color: #007bff;
@@ -88,6 +110,7 @@
       cursor: pointer;
       transition: background 0.3s, transform 0.2s;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: relative;
     }
 
     .profile-icon:hover {
@@ -99,7 +122,26 @@
       font-size: 24px;
     }
     
-    /* Estilo para o dropdown do perfil (opcional) */
+    .verified-badge {
+      position: absolute;
+      bottom: -5px;
+      right: -5px;
+      background-color: #FFD700;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid white;
+    }
+    
+    .verified-badge .material-icons {
+      font-size: 14px;
+      color: #333;
+    }
+    
+    /* Estilo para o dropdown do perfil */
     .profile-dropdown {
       position: relative;
       display: inline-block;
@@ -110,7 +152,7 @@
       position: absolute;
       right: 0;
       background-color: white;
-      min-width: 160px;
+      min-width: 200px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
       border-radius: 8px;
@@ -131,8 +173,25 @@
       border-radius: 0;
     }
     
+    .dropdown-content .premium-option {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .dropdown-content .premium-option .material-icons {
+      color: #FFD700;
+      font-size: 16px;
+    }
+    
     .profile-dropdown:hover .dropdown-content {
       display: block;
+    }
+    
+    .dropdown-divider {
+      height: 1px;
+      background-color: #e0e0e0;
+      margin: 5px 0;
     }
   </style>
 </head>
@@ -150,15 +209,29 @@
         <a href="#">Prêmios</a>
         <a href="#">Roteiro</a>
         <a href="#">Homepage</a>
+        <a href="#">Biblioteca</a>
         <a href="#">Personagens</a>
-        <a href="#">Assinatura</a>
-        
-        <!-- Substituindo o botão de login por um ícone de perfil -->
-        <div class="profile-dropdown">
-          <div class="profile-icon">
-            <span class="material-icons">person</span>
+        <a href="#">Publicar</a>
+
+        <div class="user-profile-area">
+
+
           </div>
-          <div class="dropdown-content">
+          
+          <div class="profile-dropdown">
+            <div class="profile-icon">
+              <span class="material-icons">person</span>
+              <!-- Badge de verificação na parte inferior direita do ícone -->
+              <div class="verified-badge">
+                <span class="material-icons">verified</span>
+              </div>
+            </div>
+            <div class="dropdown-content">
+              <a href="#" class="premium-option">
+                <span class="material-icons">verified</span>
+                Membro Premium
+              </a>
+
           </div>
         </div>
       </div>
