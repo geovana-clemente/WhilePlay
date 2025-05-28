@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prêmios Cinematográficos</title>
   <!-- Fonte Adamina -->
-  <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
+  <!-- Ícones do Material Design -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="/VIEWS/MEDIA/FONTE/creato_display/CreatoDisplay-ExtraBoldItalic.otf" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
   <style>
     html, body {
       margin: 0;
@@ -37,7 +44,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('/Whileplay/VIEWS/MEDIA/imagens/backgroundclean.png');
+      background-image: url('/Whileplay/VIEWS/MEDIA/imagens/banner-principal.jpg');
       background-size: cover;
       background-position: center;
       filter: brightness(0.4);
@@ -213,16 +220,17 @@
         flex: 0 0 250px;
       }
     }
-
     body {
       margin: 0;
       font-family: 'Adamina', serif;
     }
+
     header {
       width: 100%;
       margin: 0;
       padding: 0;
     }
+
     .header-container {
       background-image: url('/Whileplay/VIEWS/MEDIA/imagens/background.png');
       background-size: cover;
@@ -230,6 +238,7 @@
       padding: 40px 0;
       width: 100%;
     }
+
     .navbar {
       display: flex;
       justify-content: space-around;
@@ -238,6 +247,7 @@
       gap: 20px;
       padding: 0 20px;
     }
+
     .navbar a {
       color: rgb(255, 255, 255);
       text-decoration: none;
@@ -246,10 +256,12 @@
       padding: 10px 15px;
       transition: background 0.3s, color 0.3s;
     }
+
     .navbar a:hover {
       background-color: rgba(255, 255, 255, 0.2);
       border-radius: 8px;
     }
+
     .search-box {
       background: white;
       border-radius: 30px;
@@ -257,6 +269,7 @@
       display: flex;
       align-items: center;
     }
+
     .search-box input {
       border: none;
       outline: none;
@@ -264,25 +277,70 @@
       font-size: 16px;
       font-family: 'Adamina', serif;
     }
+
     .search-box span {
       font-size: 18px;
       cursor: pointer;
       margin-left: 8px;
     }
-    .login-button {
+
+    .profile-icon {
       background-color: white;
       color: #007bff;
-      padding: 10px 22px;
-      border: none;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 17px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
-      transition: background 0.3s;
-      font-family: 'Adamina', serif;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-    .login-button:hover {
+
+    .profile-icon:hover {
       background-color: #e0e0e0;
+      transform: scale(1.1);
+    }
+    
+    .profile-icon .material-icons {
+      font-size: 24px;
+    }
+    
+    /* Estilo para o dropdown do perfil (opcional) */
+    .profile-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    
+    .dropdown-content a {
+      color: #333 !important;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      font-size: 16px;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+      border-radius: 0;
+    }
+    
+    .profile-dropdown:hover .dropdown-content {
+      display: block;
     }
   </style>
 </head>
@@ -294,12 +352,22 @@
           <input type="text" id="searchInput" placeholder="Pesquisar">
           <span onclick="clearSearch()">❌</span>
         </div>
+
         <a href="#">Sobre Nós</a>
         <a href="#">Prêmios</a>
-        <a href="#">Homepage</a>
         <a href="#">Roteiro</a>
+        <a href="#">Homepage</a>
         <a href="#">Personagens</a>
-        <button class="login-button">Login</button>
+        <a href="#">Assinatura</a>
+        
+        <!-- Substituindo o botão de login por um ícone de perfil -->
+        <div class="profile-dropdown">
+          <div class="profile-icon">
+            <span class="material-icons">person</span>
+          </div>
+          <div class="dropdown-content">
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -396,7 +464,7 @@
           <div class="award-card-content">
             <div class="award-category">Leading Actress</div>
             <div class="award-winner">Mikey Madison</div>
-            <div class="award-details">Atuou no papel de Laney, em seu último projeto comprado pelo site.</div>
+            <div class="award-details">Atuou no papel de Laney, em seu último roteiro comprado pelo site.</div>
           </div>
         </div>
         <div class="award-card">
@@ -404,7 +472,7 @@
           <div class="award-card-content">
             <div class="award-category">Supporting Actor</div>
             <div class="award-winner">Anthony Hopkins</div>
-            <div class="award-details">Atuou o papel de Jhorsey em seu último projeto "A espera de uma esperança".</div>
+            <div class="award-details">Atuou o papel de Jhorsey em seu último filme "A espera de uma esperança".</div>
           </div>
         </div>
         <div class="award-card">
