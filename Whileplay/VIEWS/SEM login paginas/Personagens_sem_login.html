@@ -400,7 +400,7 @@ h3 {
   </style>
 </head>
 <body>
-
+<!-- Corrija os links abaixo se necessário, verifique se os caminhos estão corretos e relativos ao local deste arquivo -->
   <header>
     <div class="header-container">
       <div class="navbar">
@@ -408,12 +408,12 @@ h3 {
           <input type="text" id="searchInput" placeholder="Pesquisar">
           <span onclick="clearSearch()">❌</span>
         </div>
-        <a href="#">Sobre Nós</a>
-        <a href="#">Prêmios</a>
-        <a href="#">Homepage</a>
-        <a href="#">Roteiro</a>
-        <a href="#">Personagens</a>
-        <button class="login-button">Login</button>
+        <a href="/VIEWS/SEM login paginas/sobrenos.html">Sobre Nós</a>
+        <a href="/VIEWS/SEM login paginas/Premios_sem_login.html">Prêmios</a>
+        <a href="/VIEWS/Logins e cadastros/homepage1.html">Homepage</a>
+        <a href="/VIEWS/SEM login paginas/Roteiros_sem_login.html">Roteiro</a>
+        <a href="/VIEWS/SEM login paginas/Personagens_sem_login.html">Personagens</a>
+        <button class="login-button" onclick="window.location.href='/VIEWS/login/login.html'">Login</button>
       </div>
     </div>
   </header>
@@ -631,9 +631,9 @@ $(document).ready(function(){
     $('#baixar-roteiro-btn').off('click').on('click', function(){
       // Nenhuma ação
     });
-    // Botão comprar: redireciona para pagamento.html
+    // Botão comprar: redireciona para login.html
     $('#comprar-btn').off('click').on('click', function(){
-      window.location.href = '/VIEWS/pagamento/pagamento.html';
+      window.location.href = '/VIEWS/login/login.html';
     });
     $('#modal-roteiro').css('display','flex');
   });
