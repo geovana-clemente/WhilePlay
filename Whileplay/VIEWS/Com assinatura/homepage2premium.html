@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage Premium</title>
+</head>
+    <body>
+        <style>
+            body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Impede rolagem lateral */
+}
+
+.background {
+  background-image: url('../MEDIA/imagens/BackGround.png');
+  background-size:cover;
+  background-position: center;
+  background-repeat: no;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  font-family: 'Adamina', serif;
+}
+
+/* NAVEGAÇÃO */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 40px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 12px 18px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+
+/* BARRA DE PESQUISA */
+.search-box {
+  background: white;
+  border-radius: 30px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 18px;
+  font-family: 'Adamina', serif;
+}
+
+.search-box span {
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* BOTÃO LOGIN */
+.logout-button {
+  background-color: white;
+  color: #007bff;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: 'Adamina', serif;
+  transition: background 0.3s;
+}
+
+.logoutn-button:hover {
+  background-color: #e0e0e0;
+}
+
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container-titulos {
+color:aliceblue;
+grid-column: 1 / 3; 
+font-size: 18px;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+    color: #a0c9f5;
+}
+
+/*CONTAINERS ROTEIROS*/
+.container-roteiros {
+  background-color: rgb(28, 28, 28);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 100px; 
+  margin: auto;
+  justify-items: center; 
+  padding: 40px;
+}
+
+.container-texto1,
+.container-texto2,
+.container-texto3 {
+  background-color: #333; 
+  border-radius: 60px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+  padding: 20px;
+  transition: transform 0.3s, background-color 0.3s; 
+  text-align: center;
+  max-width: 80%; 
+}
+
+.container-texto1:hover,
+.container-texto2:hover,
+.container-texto3:hover {
+  transform: translateY(-5px);
+  background-color: rgb(101, 101, 101); 
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: aliceblue;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: aliceblue;
+}
+
+@media screen and (max-width: 768px) {
+  .container-roteiros {
+    grid-template-columns: 1fr; /* Altera para uma coluna quando a tela for menor que 768px */
+  }
+}
+
+/* RODAPÉ */
+.rodape {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px;
+    background-color: #1e1e1e;
+    color: #ccc;
+    flex-wrap: wrap;
+    gap: 30px;
+    border: 5px solidrgb(32, 32, 32);
+}
+
+.rodape div {
+    flex: 1;
+    min-width: 200px;
+}
+
+.rodape h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.rodape a {
+    display: block;
+    color: #247fe6;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.rodape a:hover {
+    text-decoration: underline;
+}
+
+.rodape img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.contato {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+        </style>
+   <section class="background">
+
+     <header>
+      <div class="navbar">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Pesquisar">
+          <span onclick="clearSearch()">❌</span>
+        </div>
+        <a href="#">Publicar</a>
+        <a href="#">Sobre Nós</a>
+        <a href="#">Biblioteca</a>
+        <a href="#">Perfil</a>
+        <a href="#">Premios</a>
+        <a href="#">Roteiro</a>
+        <a href="#">Comprar</a>
+        <a href="#">Suporte</a>
+        <button class="logout-button">Logout</button>
+      </div>
+  </header>
+
+        <div class="grid-container">
+          <div class="container-titulos">
+            <img src="../MEDIA/imagens/Logo-AEZ.png" alt="Logo-AEZ" style="max-width: 150px; margin-bottom: 20px;">
+            <h1>Transforme suas Ideias em Filmes</h1>
+           <h2>O Site que Dará Vida a seus Personagens e Roteiros</h2>
+        </div>
+        </div>
+          
+          <div class="container-roteiros">
+        <div class="container-texto1">
+        <h3>O dia D 2077</h3>
+        <p> O Dia D é um filme de 2004 que conta a preparação para a invasão da Normandia, que ocorreu em 6 de junho de 1944. O filme mostra os desafios enfrentados pelo Comandante Supremo Aliado na Europa, Dwight D. Eisenhower. </p>
+        </div>
+        <div class="container-texto2">
+            <h3>O rato sabido</h3>
+            <p>O rato sabido - Ratatouille é uma animação da Disney sobre um ratinho que sonha em ser chef de cozinha. </p>
+        </div>
+        <div class="container-texto3">
+            <h3>Amizade entre amigos</h3>
+            <p>Amizade entre amigos: Em 1989, algumas semanas antes da queda do muro de Berlim, três jovens italianos decidem visitar o Leste Europeu à procura de aventura e partem em uma jornada que mudará suas vidas para sempre.</p>
+        </div>
+          </div>
+
+<div class="rodape">
+    <div class="producao">
+      <h1>Produtores</h1>
+      <p><br>Diego Alves Gomes
+        <br>Geovana Clemente Cruz
+        <br>Livia Mayumi Hayashida
+        <br>Victor do Vale Souza
+      </p>
+    </div>
+    <div class="suporte">
+    <h1>Precisa de Suporte?</h1>
+    <a href="https://www.exemplo.com">E-mail</a>
+    <a href="https://www.exemplo.com">Fale Conosco</a>
+  </div>
+
+  <div class="siga-nos">
+    <h1>Siga-nos!</h1>
+    <a href="">
+      <img src="../MEDIA/imagens/instagram.png" alt="icon-instagram" width="100" height="100">
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">
+      <img src="../MEDIA/imagens/tiktok.png" alt="icon-tiktok" width="100" height="100">
+    </a>
+  </div>
+
+    <p class="contato">
+      Contato: aez.whileplay@gmail.com</p>
+  </div>
+
+    </section>
+</body>
+</html>
