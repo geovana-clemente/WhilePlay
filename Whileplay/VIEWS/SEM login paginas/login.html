@@ -111,12 +111,12 @@
   <div class="login-container">
     <h1>Login</h1>
     <p>Bem vindo de volta criativo!</p>
-    <form>
+    <form id="loginForm">
       <input type="email" placeholder="Email" required>
       <input type="password" placeholder="Password" required>
       <button type="submit">Logar</button>
     </form>
-    <a href="esqueceu_senha.html">Esqueceu sua senha?</a>
+    <a href="recuperar_senha.html">Esqueceu sua senha?</a>
     <div class="footer"><a href="cadastro.html">Não tem login? Faça cadastro</a>
     </div>
   </div>
@@ -131,6 +131,13 @@
         }
       }
     }
+    // Redireciona para roteiros_com_login.html ao logar
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        window.location.href = "/VIEWS/COM logins/roteiros_com_login.html";
+      });
+    });
   </script>
 </body>
 </html>

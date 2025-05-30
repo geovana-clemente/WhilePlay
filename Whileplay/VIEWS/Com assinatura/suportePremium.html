@@ -102,73 +102,74 @@ body {
 
 /* Container */
 .container {
-  background-color: rgb(63, 63, 63); 
-  border: 1px solid #ccc; 
-  border-radius: 20px;
-  padding: 30px;    
-  margin: 20px auto;      
-  width: 600px; 
-  height: 300px;
-  gap: 20px;
-}
+    background:rgb(48, 48, 48);
+    border: 1px solid #ccc; 
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px;
+    color: #fff;
+    text-align: center;
+  }
 
-.container p {
+  .container p {
+    margin: 16px 0;
+    font-size: 17px;
+    line-height: 1.6;
+  }
 
-  text-align: center;
-  margin: 0 auto;
-  width: 100%;
-  color: #ffffff;
-  font-size: 18px;   
-  line-height: 1.5;    
-  font-weight: 400;  
-}
+  .container a {
+    color: #80d8ff;
+    text-decoration: none;
+  }
 
 
 /* RODAPÉ */
 .rodape {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 40px;
-  background-color: #1e1e1e;
-  color: #ccc;
-  flex-wrap: wrap;
-  gap: 30px;
-  border: 5px solidrgb(32, 32, 32);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px;
+    background-color: #1e1e1e;
+    color: #ccc;
+    flex-wrap: wrap;
+    gap: 30px;
+    border: 5px solidrgb(32, 32, 32);
 }
 
 .rodape div {
-  flex: 1;
-  min-width: 200px;
+    flex: 1;
+    min-width: 200px;
 }
 
 .rodape h1 {
-  font-size: 20px;
-  margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .rodape a {
-  display: block;
-  color: #247fe6;
-  text-decoration: none;
-  margin: 5px 0;
+    display: block;
+    color: #247fe6;
+    text-decoration: none;
+    margin: 5px 0;
 }
 
 .rodape a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .rodape img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
 
 .contato {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
 }
 
   </style>
@@ -179,26 +180,31 @@ body {
           <input type="text" id="searchInput" placeholder="Pesquisar">
           <span onclick="clearSearch()">❌</span>
         </div>
-        <a href="#">Publicar</a>
-        <a href="#">Sobre Nós</a>
+        <a href="publicar.html">Publicar</a>
+        <a href="sobrenosPremium.html">Sobre Nós</a>
         <a href="#">Bibliotec</a>
-        <a href="#">Perfil</a>
+        <a href="perfilPremium.html">Perfil</a>
         <a href="#">Premios</a>
         <a href="#">Roteiro</a>
         <a href="#">Comprar</a>
-        <a href="#">Suporte</a>
+        <a href="suportePremium.html">Suporte</a>
         <button class="login-button">Logout</button>
       </div>
     </div>
   </header>
 
   <div class="logo">
-    <img src="../MEDIA/imagens/Logo-AEZ.png" alt="Logo-AEZ" style="max-width: 150px; margin-bottom: 20px;">
-  </div>
+  <img src="../MEDIA/imagens/Logo-AEZ.png" alt="Logo-AEZ" style="max-width: 150px; padding-left: 30px;">
+</div>
+
   <div class="container">
-    <p>Ajudamos os clientes, colaboradores e outras partes interessadas da empresa, fornecendo orientação e assistência. Atendimento ao cliente, resolução de problemas e garantia de satisfação
+    <p>Olá! Estamos aqui para ajudar.
+Nosso compromisso é oferecer suporte dedicado a clientes, parceiros e colaboradores, garantindo uma experiência segura, prática e personalizada em cada etapa do seu roteiro.
+Se você tiver dúvidas, precisa de orientação sobre nossos pacotes ou deseja relatar algum problema, nossa equipe de atendimento está pronta para oferecer a assistência necessária — sempre com foco em resolver rapidamente e garantir sua satisfação.
+Conte com a gente para tornar sua jornada ainda mais tranquila!
     </p>
-    <p>Contato: aez.whileplay@gmail.com</p>
+    <p>📩 Fale conosco: aez.whileplay@gmail.com</p>
+<p>📞 Atendimento: das 8h as 20h</p>
   </div>
 
   <div class="rodape">
