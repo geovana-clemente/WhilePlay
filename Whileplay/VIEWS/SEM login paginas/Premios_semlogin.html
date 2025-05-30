@@ -6,14 +6,93 @@
   <title>Prêmios Cinematográficos</title>
   <!-- Fonte Adamina -->
   <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
-    html, body {
+    @charset "utf-8";
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
       background: #000;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
       overflow-x: hidden;
+    }
+    body {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      background-color: #000;
+      color: #fff;
+    }
+    /* Cabeçalho personalizado */
+    header {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Adamina', serif;
+    }
+    .header-container {
+      background-image: url('/VIEWS/MEDIA/imagens/background.png');
+      background-size: cover;
+      background-position: center;
+      padding: 40px 0;
+      width: 100%;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .navbar a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 22px;
+      padding: 12px 18px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+    }
+    .search-box {
+      background: white;
+      border-radius: 30px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+    }
+    .search-box input {
+      border: none;
+      outline: none;
+      padding: 10px;
+      font-size: 18px;
+      font-family: 'Adamina', serif;
+    }
+    .search-box span {
+      font-size: 20px;
+      cursor: pointer;
+      margin-left: 8px;
+    }
+    .login-button {
+      background-color: white;
+      color: #007bff;
+      padding: 12px 26px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: 'Adamina', serif;
+    }
+    .login-button:hover {
+      background-color: #e0e0e0;
     }
 
     .container {
@@ -242,8 +321,8 @@
       color: rgb(255, 255, 255);
       text-decoration: none;
       font-weight: bold;
-      font-size: 18px;
-      padding: 10px 15px;
+      font-size: 22px;
+      padding: 12px 18px;
       transition: background 0.3s, color 0.3s;
     }
     .navbar a:hover {
@@ -253,30 +332,30 @@
     .search-box {
       background: white;
       border-radius: 30px;
-      padding: 10px 15px;
+      padding: 12px 18px;
       display: flex;
       align-items: center;
     }
     .search-box input {
       border: none;
       outline: none;
-      padding: 8px;
-      font-size: 16px;
+      padding: 10px;
+      font-size: 18px;
       font-family: 'Adamina', serif;
     }
     .search-box span {
-      font-size: 18px;
+      font-size: 20px;
       cursor: pointer;
       margin-left: 8px;
     }
     .login-button {
       background-color: white;
       color: #007bff;
-      padding: 10px 22px;
+      padding: 12px 26px;
       border: none;
       border-radius: 30px;
       font-weight: bold;
-      font-size: 17px;
+      font-size: 20px;
       cursor: pointer;
       transition: background 0.3s;
       font-family: 'Adamina', serif;
@@ -294,12 +373,12 @@
           <input type="text" id="searchInput" placeholder="Pesquisar">
           <span onclick="clearSearch()">❌</span>
         </div>
-        <a href="/VIEWS/SEM login paginas/sobrenos.html">Sobre Nós</a>
-        <a href="/VIEWS/SEM login paginas/premios_sem_login.html">Prêmios</a>
-        <a href="/VIEWS/SEM login paginas/homepage1.html">Homepage</a>
-        <a href="/VIEWS/SEM login paginas/Roteiros_sem_login.html">Roteiro</a>
-        <a href="/VIEWS/SEM login paginas/personagens_sem_login.html">Personagens</a>
-        <button class="login-button" onclick="window.location.href='/VIEWS/login/login.html'">Login</button>
+        <a href="sobrenos.html">Sobre Nós</a>
+        <a href="premios_semlogin.html">Prêmios</a>
+        <a href="homepage1.html">Homepage</a>
+        <a href="Roteiros_sem_login.html">Roteiro</a>
+        <a href="Personagens_sem_login.html">Personagens</a>
+        <button class="login-button" onclick="window.location.href='login.html'">Login</button>
       </div>
     </div>
   </header>
@@ -553,7 +632,7 @@
     <div class="suporte">
       <h1>Precisa de Suporte?</h1>
       <a href="https://www.exemplo.com">E-mail</a>
-      <a href="https://www.exemplo.com">Fale Conosco</a>
+      <a href="suporte.html">Fale Conosco</a>
     </div>
     <div class="siga-nos">
       <h1>Siga-nos!</h1>
