@@ -14,7 +14,7 @@
     }
 
     body {
-      background: url(/Whileplay/VIEWS/MEDIA/imagens/While\ Play.png) no-repeat left center fixed;
+      background: url(/VIEWS/MEDIA/imagens/While\ Play.png) no-repeat left center fixed;
       background-size: cover;
       color: #ffffff;
       height: 100vh;
@@ -116,8 +116,8 @@
       <input type="password" placeholder="Password" required>
       <button type="submit">Logar</button>
     </form>
-    <a href="#forgot-password">Esqueceu sua senha?</a>
-    <div class="footer"><a href="#signup">Não tem login? Faça cadastro</a>
+    <a href="/VIEWS/login/esqueceu_senha.html">Esqueceu sua senha?</a>
+    <div class="footer"><a href="/VIEWS/login/cadastro.html">Não tem login? Faça cadastro</a>
     </div>
   </div>
 
@@ -127,7 +127,7 @@
       if (!container.contains(event.target)) {
         const confirmRedirect = confirm("Deseja voltar para a homepage?");
         if (confirmRedirect) {
-          window.location.href = "/homepage.html";
+          window.location.href = "/VIEWS/SEM login paginas/homepage1.html";
         }
       }
     }

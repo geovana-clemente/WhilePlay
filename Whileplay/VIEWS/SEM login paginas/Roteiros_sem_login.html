@@ -36,7 +36,7 @@ header {
 }
 
 .header-container {
-  background-image: url('/Whileplay/VIEWS/MEDIA/imagens/background.png');
+  background-image: url('/VIEWS/MEDIA/imagens/background.png');
   background-size: cover;
   background-position: center;
   padding: 40px 0;
@@ -408,12 +408,12 @@ h3 {
           <input type="text" id="searchInput" placeholder="Pesquisar">
           <span onclick="clearSearch()">❌</span>
         </div>
-        <a href="#">Sobre Nós</a>
-        <a href="#">Prêmios</a>
-        <a href="#">Homepage</a>
-        <a href="#">Roteiro</a>
-        <a href="#">Personagens</a>
-        <button class="login-button">Login</button>
+        <a href="/VIEWS/sobrenos/sobrenos.html">Sobre Nós</a>
+        <a href="/VIEWS/SEM login paginas/premios_sem_login.html">Prêmios</a>
+        <a href="/VIEWS/SEM login paginas/homepage1.html">Homepage</a>
+        <a href="/VIEWS/SEM login paginas/Roteiros_sem_login.html">Roteiro</a>
+        <a href="/VIEWS/SEM login paginas/personagens_sem_login.html">Personagens</a>
+        <button class="login-button" onclick="window.location.href='/VIEWS/login/login.html'">Login</button>
       </div>
     </div>
   </header>
@@ -508,7 +508,7 @@ h3 {
   </div>
   <h2 class="line-title">Roteiristas Do Mês</h2>
   <div class="options">
-    <div class="option active" style="--optionBackground:url(/Whileplay/VIEWS/MEDIA/imagens/icone_perfil1.jpg);">
+    <div class="option active" style="--optionBackground:url(/VIEWS/MEDIA/imagens/icone_perfil1.jpg);">
       <div class="shadow"></div>
       <div class="label">
         <div class="info">
@@ -517,7 +517,7 @@ h3 {
         </div>
       </div>
     </div>
-    <div class="option" style="--optionBackground:url(/Whileplay/VIEWS/MEDIA/imagens/icone_perfil2.png);">
+    <div class="option" style="--optionBackground:url(/VIEWS/MEDIA/imagens/icone_perfil2.png);">
       <div class="shadow"></div>
       <div class="label">
         <div class="info">
@@ -526,7 +526,7 @@ h3 {
         </div>
       </div>
     </div>
-    <div class="option" style="--optionBackground:url(/Whileplay/VIEWS/MEDIA/imagens/icone_perfil4.jpg);">
+    <div class="option" style="--optionBackground:url(/VIEWS/MEDIA/imagens/icone_perfil4.jpg);">
       <div class="shadow"></div>
       <div class="label">
         <div class="info">
@@ -535,7 +535,7 @@ h3 {
         </div>
       </div>
     </div>
-    <div class="option" style="--optionBackground:url(/Whileplay/VIEWS/MEDIA/imagens/icone_perfil6.png);">
+    <div class="option" style="--optionBackground:url(/VIEWS/MEDIA/imagens/icone_perfil6.png);">
       <div class="shadow"></div>
       <div class="label">
         <div class="info">
@@ -544,7 +544,7 @@ h3 {
         </div>
       </div>
     </div>
-    <div class="option" style="--optionBackground:url(/Whileplay/VIEWS/MEDIA/imagens/icone_perfil8.jpg);">
+    <div class="option" style="--optionBackground:url(/VIEWS/MEDIA/imagens/icone_perfil8.jpg);">
       <div class="shadow"></div>
       <div class="label">
         <div class="info">
@@ -643,9 +643,9 @@ $(document).ready(function(){
     $('#baixar-roteiro-btn').off('click').on('click', function(){
       // Nenhuma ação
     });
-    // Botão comprar: redireciona para pagamento.html
+    // Botão comprar: redireciona para login.html
     $('#comprar-btn').off('click').on('click', function(){
-      window.location.href = '/Whileplay/VIEWS/pagamento/pagamento.html';
+      window.location.href = '/VIEWS/login/login.html';
     });
     $('#modal-roteiro').css('display','flex');
   });
@@ -659,5 +659,99 @@ $(document).ready(function(){
 });
 </script>
 
+<!-- INÍCIO DO RODAPÉ ADICIONADO -->
+<style>
+/* RESET E BASE */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* RODAPÉ */
+.rodape {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px;
+    background-color: #1e1e1e;
+    color: #ccc;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.rodape div {
+    flex: 1;
+    min-width: 200px;
+}
+
+.rodape h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.rodape a {
+    display: block;
+    color: #247fe6;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.rodape a:hover {
+    text-decoration: underline;
+}
+
+.rodape img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.contato {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+</style>
+
+<div class="rodape">
+  <div class="producao">
+    <h1>Produtores</h1>
+    <p><br>Diego Alves Gomes
+      <br>Geovana Clemente Cruz
+      <br>Livia Mayumi Hayashida
+      <br>Victor do Vale Souza
+    </p>
+  </div>
+  <div class="suporte">
+    <h1>Precisa de Suporte?</h1>
+    <a href="https://www.exemplo.com">E-mail</a>
+    <a href="https://www.exemplo.com">Fale Conosco</a>
+  </div>
+  <div class="siga-nos">
+    <h1>Siga-nos!</h1>
+    <a href="">
+      <img src="/VIEWS/MEDIA/imagens/instagram.png" alt="icon-instagram" width="100" height="100">
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">
+      <img src="/VIEWS/MEDIA/imagens/tiktok.png" alt="icon-tiktok" width="100" height="100">
+    </a>
+  </div>
+  <p class="contato">
+    Contato: aez.whileplay@gmail.com
+  </p>
+</div>
+<!-- FIM DO RODAPÉ ADICIONADO -->
 </body>
 </html>
