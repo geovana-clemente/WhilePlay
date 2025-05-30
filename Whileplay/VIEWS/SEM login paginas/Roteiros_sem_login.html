@@ -408,12 +408,12 @@ h3 {
           <input type="text" id="searchInput" placeholder="Pesquisar">
           <span onclick="clearSearch()">❌</span>
         </div>
-        <a href="/VIEWS/sobrenos/sobrenos.html">Sobre Nós</a>
-        <a href="/VIEWS/SEM login paginas/premios_sem_login.html">Prêmios</a>
-        <a href="/VIEWS/SEM login paginas/homepage1.html">Homepage</a>
-        <a href="/VIEWS/SEM login paginas/Roteiros_sem_login.html">Roteiro</a>
-        <a href="/VIEWS/SEM login paginas/personagens_sem_login.html">Personagens</a>
-        <button class="login-button" onclick="window.location.href='/VIEWS/login/login.html'">Login</button>
+        <a href="sobrenos.html">Sobre Nós</a>
+        <a href="premios_semlogin.html">Prêmios</a>
+        <a href="homepage1.html">Homepage</a>
+        <a href="Roteiros_sem_login.html">Roteiro</a>
+        <a href="personagens_sem_login.html">Personagens</a>
+        <button class="login-button" onclick="window.location.href='login.html'">Login</button>
       </div>
     </div>
   </header>
@@ -645,7 +645,7 @@ $(document).ready(function(){
     });
     // Botão comprar: redireciona para login.html
     $('#comprar-btn').off('click').on('click', function(){
-      window.location.href = '/VIEWS/login/login.html';
+      window.location.href = 'login.html';
     });
     $('#modal-roteiro').css('display','flex');
   });
