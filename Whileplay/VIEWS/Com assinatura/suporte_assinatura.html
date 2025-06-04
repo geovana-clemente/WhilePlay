@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
     <!-- Ícones do Material Design -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
 </head>
 <body>
   <style>
@@ -53,10 +54,11 @@ header {
 }
 
 .navbar a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 18px;
   padding: 10px 14px;
   transition: background 0.3s, color 0.3s;
 }
@@ -86,30 +88,28 @@ header {
   flex-wrap: wrap;
 }
 
-/* SEARCH BOX */
+/*BARRA DE PESQUISA */
 .search-box {
-  background: white;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  padding: 6px 12px;
-  width: 180px;
-}
+      background: white;
+      border-radius: 30px;
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+    }
 
-.search-box input {
-  border: none;
-  outline: none;
-  padding: 6px;
-  font-size: 14px;
-  font-family: 'Adamina', serif;
-  width: 100%;
-}
+    .search-box input {
+      border: none;
+      outline: none;
+      padding: 8px;
+      font-size: 16px;
+      font-family: 'Adamina', serif;
+    }
 
-.search-box span {
-  font-size: 16px;
-  cursor: pointer;
-  margin-left: 6px;
-}
+    .search-box span {
+      font-size: 18px;
+      cursor: pointer;
+      margin-left: 8px;
+    }
 
 /* BOTÃO LOGIN */
 .logout-button {
@@ -167,6 +167,16 @@ header {
   transition: background 0.3s, transform 0.2s;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   position: relative;
+}
+
+.profile-icon a {
+  color: #007bff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .profile-icon:hover {
@@ -319,43 +329,42 @@ header {
   </style>
 <header>
  <div class="header-container">
-      <div class="navbar">
+  <div class="navbar">
         <div class="search-box">
           <input type="text" id="searchInput" placeholder="Pesquisar">
           <span onclick="clearSearch()">❌</span>
         </div>
-        <a href="#">Sobre Nós</a>
-        <a href="#">Prêmios</a>
-        <a href="#">Roteiro</a>
-        <a href="#">Homepage</a>
-        <a href="#">Biblioteca</a>
-        <a href="#">Personagens</a>
-        <a href="#">Publicar</a>
-        <a href="#">Perfil</a>
-        <a href="#">Suporte</a>
-        <a href="#">Comprar</a>
+
+        <a href="sobrenos_assinatura.html">Sobre Nós</a>
+        <a href="premios_assinatura.html">Prêmios</a>
+        <a href="roteiros_assinatura.html">Roteiro</a>
+        <a href="homepage2_assinatura.html">Homepage</a>
+        <a href="">Biblioteca</a>
+        <a href="personagens_assinatura.html">Personagens</a>
+        <a href="publicar.html">Publicar</a>
 
         <div class="user-profile-area">
           </div>
           
           <div class="profile-dropdown">
-            <div class="profile-icon">
-              <span class="material-icons">person</span>
-              <!-- Badge de verificação na parte inferior direita do ícone -->
-              <div class="verified-badge">
-                <span class="material-icons">verified</span>
-              </div>
-            </div>
-            <div class="dropdown-content">
-              <a href="#" class="premium-option">
-                <span class="material-icons">verified</span>
-                Membro Premium
-              </a>
-          </div>
-        </div>
+  <div class="profile-icon">
+    <a href="perfil_assinatura.html">
+      <span class="material-icons">person</span>
+      <div class="verified-badge">
+        <span class="material-icons">verified</span>
+      </div>
+    </a>
+  </div>
+  <div class="dropdown-content">
+    <a href="#" class="premium-option">
+      <span class="material-icons">verified</span>
+      Membro Premium
+    </a>
+  </div>
+</div> 
       </div>
     </div>
-
+    
   <script>
     function clearSearch() {
       document.getElementById('searchInput').value = '';
