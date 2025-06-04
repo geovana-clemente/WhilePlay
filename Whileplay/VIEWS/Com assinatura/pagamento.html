@@ -363,7 +363,8 @@
         document.addEventListener("DOMContentLoaded", function() {
             // Configuração do botão de voltar
             const backButton = document.querySelector(".back-button");
-            backButton.addEventListener("click", function() {
+            backButton.addEventListener("click", function(e) {
+                e.preventDefault();
                 window.history.back(); // Volta para a página anterior no histórico do navegador
             });
             

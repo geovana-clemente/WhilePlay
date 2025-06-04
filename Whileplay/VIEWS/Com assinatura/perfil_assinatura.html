@@ -51,12 +51,11 @@ header {
 }
 
 .navbar a {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff;
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 18px;
-  padding: 10px 15px;
+  font-size: 14px;
+  padding: 10px 14px;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -166,16 +165,6 @@ header {
   transition: background 0.3s, transform 0.2s;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   position: relative;
-}
-
-.profile-icon a {
-  color: #007bff;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
 }
 
 .profile-icon:hover {
@@ -389,29 +378,30 @@ header {
         <a href="">Biblioteca</a>
         <a href="personagens_assinatura.html">Personagens</a>
         <a href="publicar.html">Publicar</a>
+        <a href="perfil_assinatura.html">Perfil</a>
+        <a href="suporte_assinatura.html">Suporte</a>
+        <a href="pagamento.html">Comprar</a>
 
         <div class="user-profile-area">
           </div>
           
           <div class="profile-dropdown">
-  <div class="profile-icon">
-    <a href="perfil_assinatura.html">
-      <span class="material-icons">person</span>
-      <div class="verified-badge">
-        <span class="material-icons">verified</span>
-      </div>
-    </a>
-  </div>
-  <div class="dropdown-content">
-    <a href="#" class="premium-option">
-      <span class="material-icons">verified</span>
-      Membro Premium
-    </a>
-  </div>
-</div> 
+            <div class="profile-icon" onclick="window.location.href='perfil_assinatura.html'">
+              <span class="material-icons">person</span>
+              <!-- Badge de verificação na parte inferior direita do ícone -->
+              <div class="verified-badge">
+                <span class="material-icons">verified</span>
+              </div>
+            </div>
+            <div class="dropdown-content">
+              <a href="#" class="premium-option">
+                <span class="material-icons">verified</span>
+                Membro Premium
+              </a>
+          </div>
+        </div>
       </div>
     </div>
-    
   <script>
     function clearSearch() {
       document.getElementById('searchInput').value = '';
@@ -463,7 +453,7 @@ header {
   </div>  
   </div>
   
-<div class="rodape">
+  <div class="rodape">
     <div class="producao">
       <h1>Produtores</h1>
       <p><br>Diego Alves Gomes
@@ -474,8 +464,8 @@ header {
     </div>
     <div class="suporte">
     <h1>Precisa de Suporte?</h1>
-    <a href="https://www.google.com.br/">E-mail</a>
-    <a href="suporte_assinatura.html">Fale Conosco</a>
+    <a href="https://www.exemplo.com">E-mail</a>
+    <a href="https://www.exemplo.com">Fale Conosco</a>
   </div>
 
   <div class="siga-nos">
@@ -483,7 +473,7 @@ header {
     <a href="">
       <img src="../MEDIA/imagens/instagram.png" alt="icon-instagram" width="100" height="100">
     </a>
-    <a href="">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">
       <img src="../MEDIA/imagens/tiktok.png" alt="icon-tiktok" width="100" height="100">
     </a>
   </div>
