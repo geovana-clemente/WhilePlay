@@ -6,16 +6,30 @@
     <title>Homepage Premium</title>
     <!-- Ícones do Material Design -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
 </head>
-    <body>
+<body>
     <style>
-  /*BASE */
-body, html {
+/* BÁSICO */
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
   font-family: 'Adamina', serif;
+  font-style: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 2px #0000004d;
+  color: #e0e0e0;
+  background-image: url('../MEDIA/imagens/BackGround.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-attachment: fixed;
 }
 
 /* BACKGROUND PRINCIPAL */
@@ -33,13 +47,10 @@ header {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Adamina', serif;
 }
 
 .header-container {
-  background-image: url('../MEDIA/imagens/background.png');
-  background-size: cover;
-  background-position: center;
+  font-family: 'Adamina', serif;
   padding: 40px 0;
   width: 100%;
 }
@@ -47,12 +58,33 @@ header {
 /* NAVBAR */
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  padding: 0 40px;
+  font-size: 18px;
   gap: 20px;
-  padding: 20px 40px;
+}
+
+.navbar a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+
+.navbar button.logout-button {
+  margin-left: auto;
   font-size: 14px;
+  padding: 10px 20px;
 }
 
 .navbar-left,
@@ -69,44 +101,28 @@ header {
   flex-wrap: wrap;
 }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 12px 18px;
-  transition: background 0.3s, color 0.3s;
-}
-
-.navbar a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-}
-
 /*BARRA DE PESQUISA */
 .search-box {
-  background: white;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  padding: 12px 18px;
-  width: 180px;
-}
+      background: white;
+      border-radius: 30px;
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+    }
 
-.search-box input {
-  border: none;
-  outline: none;
-  padding: 10px;
-  font-size: 18px;
-  font-family: 'Adamina', serif;
-  width: 100%;
-}
+    .search-box input {
+      border: none;
+      outline: none;
+      padding: 8px;
+      font-size: 16px;
+      font-family: 'Adamina', serif;
+    }
 
-.search-box span {
-  font-size: 20px;
-  cursor: pointer;
-  margin-left: 8px;
-}
+    .search-box span {
+      font-size: 18px;
+      cursor: pointer;
+      margin-left: 8px;
+    }
 
 /* BOTÃO LOGIN */
 .logout-button {
@@ -126,7 +142,7 @@ header {
   background-color: #e0e0e0;
 }
 
-/* PERFIL E DROPDOWN */
+/* PERFIL */
 .user-profile-area {
   display: flex;
   align-items: center;
@@ -134,7 +150,7 @@ header {
 }
 
 .subscription-badge {
-  background-color: #ffffff33;
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   padding: 5px 10px;
   display: flex;
@@ -166,6 +182,16 @@ header {
   position: relative;
 }
 
+.profile-icon a {
+  color: #007bff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 .profile-icon:hover {
   background-color: #e0e0e0;
   transform: scale(1.1);
@@ -194,6 +220,7 @@ header {
   color: #333;
 }
 
+/* DROPDOWN PERFIL */
 .profile-dropdown {
   position: relative;
   display: inline-block;
@@ -205,7 +232,7 @@ header {
   right: 0;
   background-color: white;
   min-width: 200px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px #00000033;
   z-index: 1;
   border-radius: 8px;
   margin-top: 10px;
@@ -254,9 +281,11 @@ header {
   color: aliceblue;
   grid-column: 1 / 3; 
   font-size: 18px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 4px #00000099;
 }
-
+h2 {
+    font-size: 20px;
+}
 h1 {
   color: #a0c9f5;
 }
@@ -309,7 +338,6 @@ p {
     grid-template-columns: 1fr; /* Altera para uma coluna em telas menores */
   }
 }
-
 /* RODAPÉ */
 .rodape {
   display: flex;
@@ -357,21 +385,19 @@ p {
   font-size: 14px;
 }
 
-        </style>
-   <section class="background">
-     <header>
-      <div class="header-container">
+    </style>
+    <header>
+ <div class="header-container">
       <div class="navbar">
         <div class="search-box">
           <input type="text" id="searchInput" placeholder="Pesquisar">
           <span onclick="clearSearch()">❌</span>
         </div>
-
-        <a href="sobrenosPremium.html">Sobre Nós</a>
-        <a href="Premios_assinatura.html">Prêmios</a>
+        <a href="sobrenos_assinatura.html">Sobre Nós</a>
+        <a href="premios_assinatura.html">Prêmios</a>
         <a href="roteiros_assinatura.html">Roteiro</a>
-        <a href="homepage2premium.html">Homepage</a>
-        <a href="perfil_assinatura.html">Biblioteca</a>
+        <a href="homepage2_assinatura.html">Homepage</a>
+        <a href="">Biblioteca</a>
         <a href="personagens_assinatura.html">Personagens</a>
         <a href="publicar.html">Publicar</a>
 
@@ -379,30 +405,32 @@ p {
           </div>
           
           <div class="profile-dropdown">
-            <div class="profile-icon">
-              <span class="material-icons">person</span>
-              <!-- Badge de verificação na parte inferior direita do ícone -->
-              <div class="verified-badge">
-                <span class="material-icons">verified</span>
-              </div>
-            </div>
-            <div class="dropdown-content">
-              <a href="#" class="premium-option">
-                <span class="material-icons">verified</span>
-                Membro Premium
-              </a>
-          </div>
-        </div>
+  <div class="profile-icon">
+    <a href="perfil_assinatura.html">
+      <span class="material-icons">person</span>
+      <div class="verified-badge">
+        <span class="material-icons">verified</span>
+      </div>
+    </a>
+  </div>
+  <div class="dropdown-content">
+    <a href="#" class="premium-option">
+      <span class="material-icons">verified</span>
+      Membro Premium
+    </a>
+  </div>
+</div> 
       </div>
     </div>
-
+    
   <script>
     function clearSearch() {
       document.getElementById('searchInput').value = '';
     }
   </script>
-  </header>
-        <div class="grid-container">
+    </header>
+
+  <div class="grid-container">
           <div class="container-titulos">
             <img src="../MEDIA/imagens/Logo-AEZ.png" alt="Logo-AEZ" style="max-width: 150px; margin-bottom: 20px;">
             <h1>Transforme suas Ideias em Filmes</h1>
@@ -436,8 +464,8 @@ p {
     </div>
     <div class="suporte">
     <h1>Precisa de Suporte?</h1>
-    <a href="https://www.exemplo.com">E-mail</a>
-    <a href="https://www.exemplo.com">Fale Conosco</a>
+    <a href="https://www.google.com.br/">E-mail</a>
+    <a href="suporte_assinatura.html">Fale Conosco</a>
   </div>
 
   <div class="siga-nos">
@@ -445,7 +473,7 @@ p {
     <a href="">
       <img src="../MEDIA/imagens/instagram.png" alt="icon-instagram" width="100" height="100">
     </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">
+    <a href="">
       <img src="../MEDIA/imagens/tiktok.png" alt="icon-tiktok" width="100" height="100">
     </a>
   </div>
@@ -453,7 +481,5 @@ p {
     <p class="contato">
       Contato: aez.whileplay@gmail.com</p>
   </div>
-
-    </section>
 </body>
 </html>
