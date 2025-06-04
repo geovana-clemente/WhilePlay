@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil Premium</title>
-    <link rel="stylesheet" href="perfilPremium.css">
+    <!-- Ícones do Material Design -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   <style>
@@ -23,85 +24,224 @@
   }
   
   /* CABEÇALHO */
-  header {
-    width: 100%;
-    font-family: 'Adamina', serif;
-  }
-  
-  .header-container {
-    background-image: url('../MEDIA/imagens/background.png');
-    background-size: cover;
-    background-position: center;
-    padding: 40px 0;
-    width: 100%;
-  }
-  
-  /* NAVEGAÇÃO */
-  .navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 0 20px;
-  }
-  
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 12px 18px;
-    transition: background 0.3s, color 0.3s;
-  }
-  
-  .navbar a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-  }
-  
-  /* BARRA DE PESQUISA */
-  .search-box {
-    background: white;
-    border-radius: 30px;
-    padding: 12px 18px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .search-box input {
-    background-color: white;  
-    border: none;
-    outline: none;
-    padding: 10px;
-    font-size: 18px;
-    font-family: 'Adamina', serif;
-  }
-  
-  .search-box span {
-    font-size: 20px;
-    cursor: pointer;
-    margin-left: 8px;
-  }
-  
-  /* BOTÃO LOGIN */
-  .logout-button {
-    background-color: white;
-    color: #007bff;
-    padding: 12px 26px;
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 20px;
-    cursor: pointer;
-    font-family: 'Adamina', serif;
-    transition: background 0.3s;
-  }
-  
- .logout-button:hover {
-    background-color:#e0e0e0;
-  }
+header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 
+.header-container {
+  background-image: url('../MEDIA/imagens/background.png');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Adamina', serif;
+  padding: 40px 0;
+  width: 100%;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 40px;
+  font-size: 18px;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 14px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+
+.navbar button.logout-button {
+  margin-left: auto;
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-center {
+  flex-grow: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/*BARRA DE PESQUISA */
+.search-box {
+  background: white;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  width: 180px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 6px;
+  font-size: 14px;
+  font-family: 'Adamina', serif;
+  width: 100%;
+}
+
+.search-box span {
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+/* BOTÃO LOGIN */
+.logout-button {
+  background-color: white;
+  color: #007bff;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: 'Adamina', serif;
+  transition: background 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* PERFIL */
+.user-profile-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.subscription-badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #FFD700;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.subscription-badge .material-icons,
+.dropdown-content .premium-option .material-icons {
+  font-size: 16px;
+  color: #FFD700;
+}
+
+.profile-icon {
+  background-color: white;
+  color: #007bff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.profile-icon:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+.profile-icon .material-icons {
+  font-size: 24px;
+}
+
+.verified-badge {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  background-color: #FFD700;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+}
+
+.verified-badge .material-icons {
+  font-size: 14px;
+  color: #333;
+}
+
+/* DROPDOWN PERFIL */
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.dropdown-content a {
+  color: #333 !important;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 16px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  border-radius: 0;
+}
+
+.dropdown-content .premium-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.profile-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 5px 0;
+}
   /* Conteúdo do container */
   .container {
     max-width: 800px;
@@ -225,21 +365,41 @@
   
   </style>
     <header>
-        <div class="header-container">
+      <div class="header-container">
       <div class="navbar">
         <div class="search-box">
           <input type="text" id="searchInput" placeholder="Pesquisar">
           <span onclick="clearSearch()">❌</span>
         </div>
-        <a href="publicar.html">Publicar</a>
-        <a href="sobrenosPremium.html">Sobre Nós</a>
-        <a href="">Biblioteca</a>
-        <a href="perfilPremium.html">Perfil</a>
-        <a href="Premios_assinatura.html">Premios</a>
+        <a href="sobrenos_assinatura.html">Sobre Nós</a>
+        <a href="premios_assinatura.html">Prêmios</a>
         <a href="roteiros_assinatura.html">Roteiro</a>
+        <a href="homepage2.html">Homepage</a>
+        <a href="">Biblioteca</a>
+        <a href="personagens_assinatura.html">Personagens</a>
+        <a href="publicar.html">Publicar</a>
+        <a href="perfil_assinatura.html">Perfil</a>
+        <a href="suporte_assinatura.html">Suporte</a>
         <a href="pagamento.html">Comprar</a>
-        <a href="suportePremium.html">Suporte</a>
-        <button class="logout-button" onclick="window.location.href='../Logins%20e%20cadastros/homepage1.html'">Logout</button>
+
+        <div class="user-profile-area">
+          </div>
+          
+          <div class="profile-dropdown">
+            <div class="profile-icon">
+              <span class="material-icons">person</span>
+              <!-- Badge de verificação na parte inferior direita do ícone -->
+              <div class="verified-badge">
+                <span class="material-icons">verified</span>
+              </div>
+            </div>
+            <div class="dropdown-content">
+              <a href="#" class="premium-option">
+                <span class="material-icons">verified</span>
+                Membro Premium
+              </a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -282,12 +442,12 @@
           <input type="password" id="senha" name="senha">
         </div>
   
-        <button class="rascunhos">Rascunhos</button>
         <button class="salvar">Salvar dados</button>
       </div>
     </div>
   </div>  
   </div>
+  
   <div class="rodape">
     <div class="producao">
       <h1>Produtores</h1>
