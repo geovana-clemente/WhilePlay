@@ -3,27 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil Premium</title>
-    <!-- Ícones do Material Design -->
+    <title>Homepage</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
 </head>
 <body>
-  <style>
-    /* RESET BÁSICO */
+    <style>
+/* BÁSICO */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
-    background-color: #222222;
-    color: #fff;
-  }
-  
-  /* CABEÇALHO */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Adamina', serif;
+  font-style: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 2px #0000004d;
+  color: #e0e0e0;
+  background-image: url('../MEDIA/imagens/BackGround.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* BACKGROUND PRINCIPAL */
+.background {
+  background-image: url('../MEDIA/imagens/BackGround.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+/* CABEÇALHO */
 header {
   width: 100%;
   margin: 0;
@@ -31,9 +49,6 @@ header {
 }
 
 .header-container {
-  background-image: url('../MEDIA/imagens/background.png');
-  background-size: cover;
-  background-position: center;
   font-family: 'Adamina', serif;
   padding: 40px 0;
   width: 100%;
@@ -100,7 +115,6 @@ header {
       padding: 8px;
       font-size: 16px;
       font-family: 'Adamina', serif;
-      background-color: #ffffff;
     }
 
     .search-box span {
@@ -108,7 +122,6 @@ header {
       cursor: pointer;
       margin-left: 8px;
     }
-
 
 /* BOTÃO LOGIN */
 .logout-button {
@@ -218,7 +231,7 @@ header {
   right: 0;
   background-color: white;
   min-width: 200px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px #00000033;
   z-index: 1;
   border-radius: 8px;
   margin-top: 10px;
@@ -253,216 +266,179 @@ header {
   background-color: #e0e0e0;
   margin: 5px 0;
 }
-  /* Conteúdo do container */
-  .container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background:rgb(48, 48, 48);
-    border: 1px solid #ccc; 
-    border-radius: 12px;
-    font-family: Arial, sans-serif;
+
+/* GRID CONTAINER */
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* TÍTULOS */
+.container-titulos {
+  color: aliceblue;
+  grid-column: 1 / 3; 
+  font-size: 18px;
+  text-shadow: 2px 2px 4px #00000099;
+}
+h2 {
+    font-size: 20px;
+}
+h1 {
+  color: #a0c9f5;
+}
+
+/* CONTAINERS ROTEIROS */
+.container-roteiros {
+  background-color: rgb(28, 28, 28);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 100px;
+  margin: auto;
+  justify-items: center;
+  padding: 40px;
+}
+
+.container-texto1,
+.container-texto2,
+.container-texto3 {
+  background-color: #333;
+  border-radius: 60px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: transform 0.3s, background-color 0.3s;
+  text-align: center;
+  max-width: 80%;
+}
+
+.container-texto1:hover,
+.container-texto2:hover,
+.container-texto3:hover {
+  transform: translateY(-5px);
+  background-color: rgb(101, 101, 101);
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: aliceblue;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: aliceblue;
+}
+
+/* RESPONSIVO */
+@media screen and (max-width: 768px) {
+  .container-roteiros {
+    grid-template-columns: 1fr; /* Altera para uma coluna em telas menores */
   }
-  
-  .fotoperfil {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-  }
-  
-  .fotoperfil img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solidrgb(91, 76, 175);
-  }
-  
-  .form-section {
-    display: flex;
-    gap: 40px;
-  }
-  
-  .coluna-esquerda,
-  .coluna-direita {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .campo {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input, textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-    resize: vertical;
-    background-color:rgb(221, 239, 255); 
-    color: #000
-  }
-  
-  button {
-    padding: 12px;
-    background:rgb(78, 76, 175);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    margin-top: 10px;
-  }
-  
-  button:hover {
-    background:rgb(83, 69, 160);
-  }
-  
+}
 /* RODAPÉ */
 .rodape {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 40px;
-    background-color: #1e1e1e;
-    color: #ccc;
-    flex-wrap: wrap;
-    gap: 30px;
-    border: 5px solidrgb(32, 32, 32);
-  }
-  
-  .rodape div {
-    flex: 1;
-    min-width: 200px;
-  }
-  
-  .rodape h1 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .rodape a {
-    display: block;
-    color: #247fe6;
-    text-decoration: none;
-    margin: 5px 0;
-  }
-  
-  .rodape a:hover {
-    text-decoration: underline;
-  }
-  
-  .rodape img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-  }
-  
-  .contato {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-  }
-  
-  </style>
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 40px;
+  background-color: #1e1e1e;
+  color: #ccc;
+  flex-wrap: wrap;
+  gap: 30px;
+  border: 5px solid rgb(32, 32, 32);
+}
+
+.rodape div {
+  flex: 1;
+  min-width: 200px;
+}
+
+.rodape h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.rodape a {
+  display: block;
+  color: #247fe6;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+.rodape a:hover {
+  text-decoration: underline;
+}
+
+.rodape img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.contato {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+    </style>
     <header>
-      <div class="header-container">
+ <div class="header-container">
       <div class="navbar">
         <div class="search-box">
           <input type="text" id="searchInput" placeholder="Pesquisar">
           <span onclick="clearSearch()">❌</span>
         </div>
-        <a href="sobrenos_assinatura.html">Sobre Nós</a>
-        <a href="premios_assinatura.html">Prêmios</a>
-        <a href="roteiros_assinatura.html">Roteiro</a>
-        <a href="homepage2_assinatura.html">Homepage</a>
-        <a href="">Biblioteca</a>
-        <a href="personagens_assinatura.html">Personagens</a>
-        <a href="publicar.html">Publicar</a>
+        <a href="sobrenos_com_login.html">Sobre Nós</a>
+        <a href="prêmios_com_login.html">Prêmios</a>
+        <a href="roteiros_com_login.html">Roteiro</a>
+        <a href="homepage2_com_login.html">Homepage</a>
+        <a href="personagens_com_login.html">Personagens</a>
+        <a href="assinatura.html">Assinatura</a>
 
-        <div class="user-profile-area">
+        <div class="profile-dropdown">
+          <div class="profile-icon" onclick="window.location.href='./perfil_com_login.html'">
+            <span class="material-icons">person</span>
           </div>
-          
-          <div class="profile-dropdown">
-  <div class="profile-icon">
-    <a href="perfil_assinatura.html">
-      <span class="material-icons">person</span>
-      <div class="verified-badge">
-        <span class="material-icons">verified</span>
-      </div>
-    </a>
-  </div>
-  <div class="dropdown-content">
-    <a href="#" class="premium-option">
-      <span class="material-icons">verified</span>
-      Membro Premium
-    </a>
-  </div>
-</div> 
+          <div class="dropdown-content">
+          </div>
+        </div>
       </div>
     </div>
-    
+
   <script>
     function clearSearch() {
-      document.getElementById('searchInput').value = '';
+      document.getElementById("searchInput").value = ""; 
     }
   </script>
     </header>
 
-  <div class="logo">
-  <img src="../MEDIA/imagens/Logo-AEZ.png" alt="Logo-AEZ" style="max-width: 150px; padding-left: 30px;">
-</div>
+  <div class="grid-container">
+          <div class="container-titulos">
+            <img src="../MEDIA/imagens/Logo-AEZ.png" alt="Logo-AEZ" style="max-width: 150px; margin-bottom: 20px;">
+            <h1>Transforme suas Ideias em Filmes</h1>
+           <h2>O Site que Dará Vida a seus Personagens e Roteiros</h2>
+        </div>
+        </div>
+          
+          <div class="container-roteiros">
+        <div class="container-texto1">
+        <h3>O dia D 2077</h3>
+        <p> O Dia D é um filme de 2004 que conta a preparação para a invasão da Normandia, que ocorreu em 6 de junho de 1944. O filme mostra os desafios enfrentados pelo Comandante Supremo Aliado na Europa, Dwight D. Eisenhower. </p>
+        </div>
+        <div class="container-texto2">
+            <h3>O rato sabido</h3>
+            <p>O rato sabido - Ratatouille é uma animação da Disney sobre um ratinho que sonha em ser chef de cozinha. </p>
+        </div>
+        <div class="container-texto3">
+            <h3>Amizade entre amigos</h3>
+            <p>Amizade entre amigos: Em 1989, algumas semanas antes da queda do muro de Berlim, três jovens italianos decidem visitar o Leste Europeu à procura de aventura e partem em uma jornada que mudará suas vidas para sempre.</p>
+        </div>
+          </div>
 
-  <div class="container">
-    <div class="fotoperfil">
-      <img src="https://img.freepik.com/fotos-gratis/foto-isolada-de-um-gatinho-ruivo-sentado-em-frente-a-um-gato-olhando-para-a-direita_181624-45937.jpg?semt=ais_hybrid&w=740" alt="Foto de perfil">
-    </div>
-  
-    <div class="form-section">
-      <div class="coluna-esquerda">
-        <div class="campo">
-          <label for="nomecompleto">Nome Completo:</label>
-          <input type="text" id="nomecompleto" name="nomecompleto">
-        </div>
-  
-        <div class="campo">
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username">
-        </div>
-  
-        <div class="campo">
-          <label for="biografia">Biografia:</label>
-          <textarea id="biografia" name="biografia" rows="4"></textarea>
-        </div>
-      </div>
-  
-      <div class="coluna-direita">
-        <div class="campo">
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email">
-        </div>
-  
-        <div class="campo">
-          <label for="senha">Senha:</label>
-          <input type="password" id="senha" name="senha">
-        </div>
-  
-        <button class="salvar">Salvar dados</button>
-      </div>
-    </div>
-  </div>  
-  </div>
-  
 <div class="rodape">
     <div class="producao">
       <h1>Produtores</h1>
@@ -475,7 +451,7 @@ header {
     <div class="suporte">
     <h1>Precisa de Suporte?</h1>
     <a href="https://www.google.com.br/">E-mail</a>
-    <a href="suporte_assinatura.html">Fale Conosco</a>
+    <a href="suporte_com_login.html">Fale Conosco</a>
   </div>
 
   <div class="siga-nos">
