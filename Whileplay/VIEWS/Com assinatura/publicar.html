@@ -244,23 +244,19 @@
             cursor: pointer;
             outline: none;
             transition: 0.3s ease-in;
+            background: linear-gradient(135deg, #ffffff 60%, #c7d2fe 100%); /* cor mais forte */
+            color: #2a3990; /* azul mais escuro para contraste */
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(67,97,238,0.08);
         }
         
         .price-card label {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            border-radius: 6px;
-            border: 1px solid #bcbcbc;
-            cursor: pointer;
+            background: transparent;
         }
         
         .price-card input[type="radio"]:checked ~ label {
             border: 2px solid #4361EE;
-            background: rgba(67, 97, 238, 0.1);
+            background: rgba(67, 97, 238, 0.08);
             color: #4361EE;
             outline: none;
         }
@@ -346,17 +342,18 @@
         .file-upload-label {
             display: block;
             padding: 12px;
-            background-color: #f0f2ff;
-            color: #4361EE;
+            background-color: #e0e7ff; /* cor mais forte que #f0f2ff */
+            color: #2a3990; /* azul mais escuro para contraste */
             text-align: center;
             border: 1px dashed #4361EE;
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.2s ease;
+            font-weight: 600;
         }
         
         .file-upload-label:hover {
-            background-color: #e7ecff;
+            background-color: #c7d2fe; /* cor mais forte no hover */
         }
         
         .terms-container {
@@ -499,12 +496,12 @@
         </div>
 
         <a href="#">Sobre Nós</a>
-        <a href="#">Prêmios</a>
-        <a href="#">Roteiro</a>
-        <a href="#">Homepage</a>
-        <a href="#">Biblioteca</a>
-        <a href="#">Personagens</a>
-        <a href="#">Publicar</a>
+        <a href="/VIEWS/Com assinatura/Premios_assinatura.html">Prêmios</a>
+        <a href="/VIEWS/Com assinatura/roteiros_assinatura.html">Roteiro</a>
+        <a href="/VIEWS/Com assinatura/homepage2premium.html">Homepage</a>
+        <a href="/">Biblioteca</a>
+        <a href="/VIEWS/Com assinatura/personagens_assinatura.html">Personagens</a>
+        <a href="/VIEWS/Com assinatura/Publicar.html">Publicar</a>
 
         <div class="user-profile-area">
 
@@ -535,7 +532,7 @@
     <main class="main-content">
         <div class="checkout-card">
             <div class="title">
-                <p><span>Publicar Projeto</span> <br>Venda os direitos do seu projeto</p>
+                <p><span>Publicar Projeto</span> <br><span style="font-size:1.1rem;font-weight:400;color:#2a3990;">Selecione o tipo de arquivo que deseja disponibilizar para venda</span></p>
             </div>
             <div class="price-container">
                 <div class="price-card">
@@ -763,7 +760,7 @@
       <div class="suporte">
         <h1>Precisa de Suporte?</h1>
         <a href="https://www.exemplo.com">E-mail</a>
-        <a href="https://www.exemplo.com">Fale Conosco</a>
+        <a href="/VIEWS/Com assinatura/suportePremium.html">Fale Conosco</a>
       </div>
       <div class="siga-nos">
         <h1>Siga-nos!</h1>
